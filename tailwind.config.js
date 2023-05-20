@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -31,6 +29,9 @@ module.exports = {
         inputShadow: '0px 1px 10px rgba(0,0,0,0.1)',
         linkusRegularShadow: '0px 4px 10px rgba(0,0,0,0.12)',
         linkusButton: '0px 1px 3px rgba(0,0,0,0.2)',
+      },
+      height: {
+        px7: '7px',
       },
       width: {
         px41: '41px',
