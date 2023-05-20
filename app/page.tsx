@@ -1,27 +1,16 @@
 'use client';
-import { signIn, signOut } from "next-auth/react";
-import { useSession } from 'next-auth/react';
-import Loader from "./components/Loader";
-
+import { signIn } from 'next-auth/react';
 
 export default function Home() {
-  const { data: session, status } = useSession();
-  console.log(session);
-  if (status === 'loading') {
-    return <Loader />;
-  }
 
   return (
-   <div>
-     CV Polisher
-     <button onClick={() => signIn()}>Signin</button>
-
-      {session && (
-        <div>
-          <h1> Welcome {session.user.token}</h1>
-          <button onClick={() => signOut()}>Signout</button>
-        </div>
-      )}
-   </div>
-  )
+    <div className='flex gap-8 justify-around items-center w-full py-2'>
+      <h1>CV Polisher</h1>
+      <button
+        className='flex py-2 px-6 bg-brandPrimary text-white rounded-sm font-bold'
+        onClick={() => signIn()}>
+        Sign in
+      </button>
+    </div>
+  );
 }

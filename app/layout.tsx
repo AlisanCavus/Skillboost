@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
+      data-theme='acid'
       className={`${roboto.className} antialiased scroll-smooth`}>
       <body>
         <Provider>
