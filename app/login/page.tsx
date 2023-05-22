@@ -1,73 +1,83 @@
-'use client';
-import { signIn } from 'next-auth/react';
-import { FormEventHandler, useState } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+import { signIn } from "next-auth/react";
+import { FormEventHandler, useState } from "react";
+import { useRouter } from "next/navigation";
+import { UnAuthLayout } from "../components";
 
 const Signin = () => {
   const router = useRouter();
   const [user, setUser] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
 
-    const res = await signIn('credentials', {
+    const res = await signIn("credentials", {
       email: user.email,
       password: user.password,
       redirect: false,
     });
 
     if (!res?.error) {
-      router.push('/welcome');
+      router.push("/welcome");
     }
   };
 
   return (
-    <div className='flex justify-center align-center h-[calc(100dvh-7px)] w-full items-center'>
+    <UnAuthLayout
+      companyName="Linkus"
+      termsLink="http://google.com"
+      logoImage="/linkusLogo.svg"
+      privacyLink="http://google.com"
+      cookieLink="http://google.com"
+      dataConsenseLink="http://google.com"
+    >
       <form
         onSubmit={handleSubmit}
-        className='min-h-1/2 w-1/5 p-2 gap-8 flex flex-col align-center justify-center rounded-sm bg-brandSecondary'>
-        <div className='form-control w-full max-w-xl'>
-          <label htmlFor='email' className='label text-white'>
-            {' '}
-            Email{' '}
+        className="min-h-1/2 align-center flex w-11/12 flex-col justify-center gap-8 rounded-sm bg-brandSecondary p-2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5"
+      >
+        <div className="form-control w-full max-w-xl">
+          <label htmlFor="email" className="label text-white">
+            {" "}
+            Email{" "}
           </label>
           <input
-            type='text'
-            name='email'
-            id='email'
-            className='input input-bordered w-full max-w-xl rounded-sm'
-            placeholder='email'
+            type="text"
+            name="email"
+            id="email"
+            className="input-bordered input w-full max-w-xl rounded-sm"
+            placeholder="email"
             value={user.email}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
-        <div className='form-control w-full max-w-xl'>
-          <label htmlFor='password' className='label text-white'>
-            {' '}
+        <div className="form-control w-full max-w-xl">
+          <label htmlFor="password" className="label text-white">
+            {" "}
             Password
           </label>
           <input
-            type='password'
-            name='password'
-            id='password'
-            className='input input-bordered w-full max-w-xl rounded-sm'
-            placeholder='password'
+            type="password"
+            name="password"
+            id="password"
+            className="input-bordered input w-full max-w-xl rounded-sm"
+            placeholder="password"
             value={user.password}
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
-        <div className='form-control'>
+        <div className="form-control">
           <button
-            className='flex justify-center py-2 px-6 bg-brandPrimary text-white rounded-sm font-bold'
-            type='submit'>
+            className="flex justify-center rounded-sm bg-brandPrimary px-6 py-2 font-bold text-white"
+            type="submit"
+          >
             Sign in
           </button>
         </div>
       </form>
-    </div>
+    </UnAuthLayout>
   );
 };
 

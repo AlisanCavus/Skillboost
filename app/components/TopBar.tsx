@@ -1,11 +1,10 @@
 import React, { FC } from "react"
 
-const Topbar: FC = () => {
+export const TopBar: FC = () => {
   return (
-    <div className="h-px7 w-full bg-gradient-to-r from-brandPrimary to-brandPrimarySoft">
+    <div className="h-px7 w-screen bg-gradient-to-r from-brandPrimary to-brandPrimarySoft">
         &nbsp;
     </div>
   )
 }
 
-export default Topbar

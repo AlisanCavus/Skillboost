@@ -1,7 +1,6 @@
 import './globals.css';
 import { Roboto } from 'next/font/google';
-import Provider from './components/Provider';
-import TopBar from './components/TopBar';
+import { Provider } from '@/app/components';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -25,7 +24,6 @@ export default function RootLayout({
       className={`${roboto.className} antialiased scroll-smooth`}>
       <body>
         <Provider>
-          <TopBar />
           <main className=''>{children}</main>
         </Provider>
       </body>

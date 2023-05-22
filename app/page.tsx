@@ -1,16 +1,20 @@
-'use client';
-import { signIn } from 'next-auth/react';
+"use client";
+import { signIn } from "next-auth/react";
+import { TopBar } from "./components";
 
 export default function Home() {
-
   return (
-    <div className='flex gap-8 justify-around items-center w-full py-2'>
-      <h1>CV Polisher</h1>
-      <button
-        className='flex py-2 px-6 bg-brandPrimary text-white rounded-sm font-bold'
-        onClick={() => signIn()}>
-        Sign in
-      </button>
-    </div>
+    <>
+      <TopBar />
+      <div className="flex w-full items-center justify-around gap-8 py-2">
+        <h1>CV Polisher</h1>
+        <button
+          className="flex rounded-sm bg-brandPrimary px-6 py-2 font-bold text-white"
+          onClick={() => signIn()}
+        >
+          Sign in
+        </button>
+      </div>
+    </>
   );
 }

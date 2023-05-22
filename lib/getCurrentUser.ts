@@ -1,11 +1,11 @@
-import api from './axiosInst';
+import {api}  from './axiosInst';
 
 interface Session {
     user: {
       token: string;
     };
   }
-const getCurrentUser = (session:Session) => {
+export const getCurrentUser = (session:Session) => {
     if (session) {
       api.get('/current/user', {
         headers: {
@@ -21,4 +21,3 @@ const getCurrentUser = (session:Session) => {
     }
   };
   
- export default getCurrentUser;
