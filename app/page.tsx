@@ -1,19 +1,31 @@
-"use client";
-import { signIn } from "next-auth/react";
-import { TopBar } from "./components";
+import { UnAuthLayout } from '@/app/components/UnauthLayout';
 
 export default function Home() {
   return (
     <>
-      <TopBar />
-      <div className="flex w-full items-center justify-around gap-8 py-2">
-        <h1>CV Polisher</h1>
-        <button
-          className="flex rounded-sm bg-brandPrimary px-6 py-2 font-bold text-white"
-          onClick={() => signIn()}
+      <div className="relative h-screen w-screen overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          className="absolute inset-0 h-full w-full object-cover overflow-hidden3 blur-[10px] grayscale lg:object-fill transform scale-110"
         >
-          Sign in
-        </button>
+          <source src="/sa.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <UnAuthLayout
+              companyName="Linkus"
+              termsLink="http://google.com"
+              logoImage="/linkusLogo.svg"
+              privacyLink="http://google.com"
+              cookieLink="http://google.com"
+              dataConsenseLink="http://google.com"
+            >
+            
+            </UnAuthLayout>
+          </div>
+        </div>
       </div>
     </>
   );

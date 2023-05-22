@@ -1,17 +1,11 @@
+'use client';
 import { PropsWithChildren, FC } from "react";
 import Image from "next/image";
-import { TopBar } from "@/app/components";
+import { TopBar } from "@/app/components/TopBar";
+import { UnAuthLayoutProps } from "@/types/generalTypes";
+import { useRouter } from "next/navigation";
 
-type Props = {
-  logoImage: string;
-  companyName: string;
-  termsLink: string;
-  privacyLink: string;
-  cookieLink: string;
-  dataConsenseLink: string;
-};
-
-export const UnAuthLayout: FC<PropsWithChildren<Props>> = ({
+export const UnAuthLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
   children,
   logoImage,
   companyName,
@@ -20,8 +14,10 @@ export const UnAuthLayout: FC<PropsWithChildren<Props>> = ({
   cookieLink,
   dataConsenseLink,
 }) => {
+  const route = useRouter();
+  console.log(route)
   return (
-    <div className="mt-2 flex max-h-max min-h-screen w-full flex-col items-center justify-between gap-8 bg-brandBackground  md:mt-0 md:gap-0 xl:justify-between">
+    <div className="flex max-h-max min-h-screen w-full flex-col items-center justify-between overflow-hidden gap-8 bg-transparent md:mt-0 md:gap-0 xl:justify-between">
       <TopBar />
       <div className=" my-auto flex min-h-max w-11/12 flex-col items-center justify-center ">
         <div className=" mb-2 flex w-11/12 items-start justify-start md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5">
@@ -31,7 +27,10 @@ export const UnAuthLayout: FC<PropsWithChildren<Props>> = ({
             alt="Linkus Logo"
             width="175"
             height="65"
-            className=" -ms-3"
+            priority={true}
+            placeholder="blur"
+            blurDataURL={logoImage}
+            className="-ms-3"
           />
         </div>
         {children}
