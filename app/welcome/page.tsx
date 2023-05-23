@@ -8,7 +8,7 @@ const Page = async () => {
   const token = session?.user.token as string;
 
   if (!session) {
-    redirect("/login");
+    redirect("/");
   }
 
   return (

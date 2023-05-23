@@ -1,19 +1,14 @@
 import {api}  from './axiosInst';
 
-interface Session {
-    user: {
-      token: string;
-    };
-  }
-export const getCurrentUser = (session:Session) => {
-    if (session) {
+export const getCurrentUser = (token :string) => {
+    if (token) {
       api.get('/current/user', {
         headers: {
-          Authorization: `Bearer ${session?.user?.token}`,
+          Authorization: `Bearer ${token}`,
         },
       })
         .then((res) => {
-          console.log(res.data);
+          return res.data;
         })
         .catch((err) => {
           console.log(err);
