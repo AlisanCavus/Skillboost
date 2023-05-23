@@ -1,2 +1,2 @@
 export * from './axiosInst';
-export * from './getCurrentUser';
+export * from './getUserInfo';

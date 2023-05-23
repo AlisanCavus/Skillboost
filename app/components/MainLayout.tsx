@@ -1,9 +1,7 @@
-"use client";
 import { PropsWithChildren, FC } from "react";
 import Image from "next/image";
 import { TopBar } from "@/app/components/TopBar";
 import { UnAuthLayoutProps } from "@/types/generalTypes";
-import Link from "next/link";
 
 export const MainLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
   children,
@@ -15,7 +13,7 @@ export const MainLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
   dataConsenseLink,
 }) => {
   return (
-    <div className="flex max-h-max min-h-screen w-screen flex-col items-center justify-between gap-8 overflow-hidden md:mt-0 md:gap-0 xl:justify-between bg-gradient-to-r via-transparent from-brandBackground to-transparent bg-opacity-10">
+    <div className="flex max-h-max min-h-screen w-screen flex-col items-center justify-between gap-8 md:mt-0 md:gap-0 xl:justify-between bg-gradient-to-r from-brandBackground to-transparent bg-opacity-10">
       <div className="h-full flex flex-col justify-start items-start">
         <TopBar />
         <div className="flex min-h-[calc(100dvh-10rem)] w-screen flex-col items-center justify-start ">
@@ -42,24 +40,24 @@ export const MainLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
         <div className="flex w-full items-center justify-center lg:w-1/2 lg:justify-end xl:w-1/2 ">
           <ul className={`flex w-full items-center justify-around divide-x divide-white rtl:divide-x-reverse `}>
             <li className="w-full px-2 text-center align-middle text-xs font-normal ">
-              <Link href={termsLink} target="_blank" rel="noreferrer">
+              <a href={termsLink} target="_blank" rel="noreferrer">
                 <span>Terms of Use</span>
-              </Link>
+              </a>
             </li>
             <li className="w-full px-2 text-center align-middle  text-xs font-normal ">
-              <Link href={privacyLink} target="_blank" rel="noreferrer">
+              <a href={privacyLink} target="_blank" rel="noreferrer">
                 <span>Privacy Policy</span>
-              </Link>
+              </a>
             </li>
             <li className=" w-full px-2 text-center align-middle text-xs font-normal  ">
-              <Link href={cookieLink} target="_blank" rel="noreferrer">
+              <a href={cookieLink} target="_blank" rel="noreferrer">
                 <span>Cookie Policy</span>
-              </Link>
+              </a>
             </li>
             <li className=" w-full px-2 text-center align-middle  text-xs font-normal ">
-              <Link href={dataConsenseLink} target="_blank" rel="noreferrer">
+              <a href={dataConsenseLink} target="_blank" rel="noreferrer">
                 <span>Data Consent</span>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

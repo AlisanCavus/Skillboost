@@ -6,15 +6,14 @@ import { redirect } from "next/navigation";
 const Page = async () => {
   const session = await getServerSession(authOptions);
   const token = session?.user.token as string;
+  const companyLogo = "/linkusLogo.svg";
 
   if (!session) {
     redirect("/");
   }
 
   return (
-    <AuthLayout token={token}>
-      <h1> Welcome to server protected </h1>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
+    <AuthLayout token={token} companyLogo={companyLogo}>
     </AuthLayout>
   )
 
