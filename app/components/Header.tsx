@@ -11,7 +11,7 @@ import { TbLogout } from "react-icons/tb";
 const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
   const userInfo = useQuery(["userData"], () => getUserInfo(token));
   const { data, isLoading, isError, error } = userInfo;
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   if (isError) return <span>Error: {error as any}</span>;
   return (
     <div className="flex h-16 w-full items-center justify-start shadow-linkusShadow md:justify-between">

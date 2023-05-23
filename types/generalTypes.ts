@@ -2,6 +2,11 @@ export interface Token {
   token: string;
 }
 
+export interface ToastTypes {
+  type: string;
+  message: string;
+}
+
 export type UnAuthLayoutProps = {
   logoImage: string;
   companyName: string;

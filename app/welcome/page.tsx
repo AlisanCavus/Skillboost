@@ -2,6 +2,8 @@ import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import { AuthLayout } from "@/app/components/AuthLayout"
 import { redirect } from "next/navigation";
+import WizardLayout from "../components/WizardLayout";
+import TextArea from "../components/TextArea";
 
 const Page = async () => {
   const session = await getServerSession(authOptions);
@@ -14,9 +16,13 @@ const Page = async () => {
 
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
+        <WizardLayout>
+          <TextArea />
+        </WizardLayout>
     </AuthLayout>
   )
 
+  // TODO: affinda integration;
   // const router = useRouter();
   // const [error, setError] = useState<string | undefined | DocumentError >();
   // const [isLoading, setIsLoading] = useState(false);
