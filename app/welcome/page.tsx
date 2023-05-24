@@ -1,9 +1,11 @@
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import { AuthLayout } from "@/app/components/AuthLayout"
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { AuthLayout } from "@/app/components/AuthLayout";
 import { redirect } from "next/navigation";
-import WizardLayout from "../components/WizardLayout";
-import TextArea from "../components/TextArea";
+import WizardLayout from "@/app/components/WizardLayout";
+import TextArea from "@/app/components/TextArea";
+import JobDescription from "@/app/components/JobDescription";
+import GPTResponse from "@/app/components/GPTResponse";
 
 const Page = async () => {
   const session = await getServerSession(authOptions);
@@ -16,11 +18,13 @@ const Page = async () => {
 
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
-        <WizardLayout>
-          <TextArea />
-        </WizardLayout>
+      <WizardLayout>
+        <TextArea />
+        <JobDescription />
+        <GPTResponse />
+      </WizardLayout>
     </AuthLayout>
-  )
+  );
 
   // TODO: affinda integration;
   // const router = useRouter();

@@ -3,7 +3,6 @@ import { PropsWithChildren, FC } from "react";
 import Image from "next/image";
 import { TopBar } from "@/app/components/TopBar";
 import { UnAuthLayoutProps } from "@/types/generalTypes";
-import { useRouter, usePathname } from "next/navigation";
 
 export const UnAuthLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
   children,
