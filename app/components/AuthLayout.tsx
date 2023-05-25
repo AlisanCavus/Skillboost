@@ -4,7 +4,6 @@ import { TopBar } from "@/app/components/TopBar";
 import  Header  from "@/app/components/Header";
 import { AuthLayoutProps } from "@/types/generalTypes";
 
-
 export const AuthLayout: FC<PropsWithChildren<AuthLayoutProps>> = ({
     token,
     children,

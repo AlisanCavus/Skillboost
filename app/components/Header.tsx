@@ -11,6 +11,12 @@ import { TbLogout } from "react-icons/tb";
 const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
   const userInfo = useQuery(["userData"], () => getUserInfo(token));
   const { data, isLoading, isError, error } = userInfo;
+  const handleSignout = () => {
+    localStorage.removeItem("gptSkillsExp")
+    localStorage.removeItem("jobDescription")
+    localStorage.removeItem("resume")
+    signOut();
+  };
   // if (isLoading) return <Loader />;
   if (isError) return <span>Error: {error as any}</span>;
   return (
@@ -44,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
         <div className="mt-1.5 me-2 w-11/12 flex items-center justify-end gap-4">
           <button
             className="flex justify-center rounded-lg bg-brandPrimary px-2 py-1 gap-2 font-bold text-white lg:px-6 lg:py-3"
-            onClick={() => signOut()}
+            onClick={() => handleSignout()}
           >
             <TbLogout className="my-auto"/>
             Logout

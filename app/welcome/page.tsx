@@ -4,8 +4,6 @@ import { AuthLayout } from "@/app/components/AuthLayout";
 import { redirect } from "next/navigation";
 import WizardLayout from "@/app/components/WizardLayout";
 import TextArea from "@/app/components/TextArea";
-import JobDescription from "@/app/components/JobDescription";
-import GPTResponse from "@/app/components/GPTResponse";
 
 const Page = async () => {
   const session = await getServerSession(authOptions);
@@ -20,8 +18,6 @@ const Page = async () => {
     <AuthLayout token={token} companyLogo={companyLogo}>
       <WizardLayout>
         <TextArea />
-        <JobDescription />
-        <GPTResponse />
       </WizardLayout>
     </AuthLayout>
   );

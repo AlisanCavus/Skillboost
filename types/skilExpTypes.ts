@@ -18,12 +18,16 @@ export interface JsonData {
   timestamp: number;
 }
 
+export interface GptSkillsExp {
+    skills: string[];
+    experiences: string[];
+    qualifications: string[];
+}
+
 export interface JobDescription {
   jobDescription: string;
-  isLoading: boolean;
-  gptSkillsExp: string;
-  setIsLoading: (isLoading: boolean) => void;
+  gptSkillsExp: GptSkillsExp;
   setJobDescription: (jobDescription: string) => void;
-  addJobDescription: () => void;
-  setGptSkillsExp: (gptSkillsExp: string) => void;
+  setGptSkillsExp: (gptSkillsExp: GptSkillsExp) => void;
 }
+
