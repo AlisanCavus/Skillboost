@@ -25,6 +25,8 @@ export interface GptSkillsExp {
 }
 
 export interface JobDescription {
+  everythingOK: boolean;
+  setEverythingOK: (everthingOK: boolean) => void;
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
   jobDescription: string;

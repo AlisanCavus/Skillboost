@@ -7,8 +7,10 @@ import { useRouter } from "next/navigation";
 import WizardHeader from "../components/WizardHeader";
 
 const TextArea = () => {
+  const router = useRouter();
   const ref = useRef<HTMLTextAreaElement>(null);
   const [jobDescription, setJobDescription] = useState("");
+  const [everythingOK, setEverythingOK] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [gptSkillsExp, setGptSkillsExp] = useState({}) as any;
 
@@ -40,19 +42,16 @@ const TextArea = () => {
     if (jobDescription === "") {
       alert("Please enter a job description");
     } else {
-      setIsLoading(true);
-      try {
-        extractJobDesc({
-          gptSkillsExp,
-          setGptSkillsExp,
-          jobDescription,
-          setIsLoading,
-          isLoading,
-          setJobDescription: setJobDescription,
-        });
-      } catch (error) {
-        console.error("Error extracting job description:", error);
-      }
+      extractJobDesc({
+        gptSkillsExp,
+        setGptSkillsExp,
+        jobDescription,
+        everythingOK,
+        setEverythingOK,
+        setIsLoading,
+        isLoading,
+        setJobDescription,
+      });
     }
   };
 
