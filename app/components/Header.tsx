@@ -9,14 +9,17 @@ import Image from "next/image";
 import { TbLogout } from "react-icons/tb";
 
 const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
-  const userInfo = useQuery(["userData"], () => getUserInfo(token));
-  const { data, isLoading, isError, error } = userInfo;
+  const currentUser = useQuery(["userData"], () => getUserInfo(token));
+  const { data, isLoading, isError, error } = currentUser;
   const handleSignout = () => {
     localStorage.removeItem("gptSkillsExp")
     localStorage.removeItem("jobDescription")
     localStorage.removeItem("resume")
+    localStorage.removeItem("motivationLetter")
     signOut();
   };
+
+  // TODO: Add loading state similar to header with loader
   // if (isLoading) return <Loader />;
   if (isError) return <span>Error: {error as any}</span>;
   return (
@@ -37,9 +40,12 @@ const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
               <div className=" my-auto h-1/2 w-px bg-brandSecondary bg-opacity-50"></div>
             </div>
             <div className="flex h-px41 items-center justify-center gap-2 px-4">
-              <span className="align-middle font-roboto text-lg font-light tracking-widest text-brandSecondary ">
+              {currentUser.data?.fullName ? (<span className="align-middle font-roboto text-lg font-light tracking-widest text-brandSecondary ">
+                Hi, {currentUser.data?.fullName}
+              </span>) : (<span className="align-middle font-roboto text-lg font-light tracking-widest text-brandSecondary ">
                 SKILLBOOST
-              </span>
+              </span>)}
+              
             </div>
           </div>
         </div>

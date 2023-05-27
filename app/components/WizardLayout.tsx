@@ -15,7 +15,7 @@ const WizardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
               width={263}
               height={322}
             />
-            <h1 className=" text-3xl text-stone-950 underline decoration-brandPrimary decoration-solid">
+            <h1 className=" text-3xl text-stone-950 underline decoration-4 decoration-brandPrimary decoration-solid">
               SkillBoost
             </h1>
           </div>

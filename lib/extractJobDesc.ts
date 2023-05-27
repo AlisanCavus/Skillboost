@@ -1,6 +1,7 @@
 import { JobDescription } from "@/types/skilExpTypes";
 
 export const extractJobDesc = async (jobDescription: JobDescription) => {
+  jobDescription.setIsLoading(true);
   const options = {
     method: "POST",
     headers: {
@@ -32,7 +33,7 @@ export const extractJobDesc = async (jobDescription: JobDescription) => {
       // save to local storage
       localStorage.setItem("jobDescription", jobDescription.jobDescription);
       localStorage.setItem("gptSkillsExp", data);
-      console.log(data);
+      jobDescription.setIsLoading(false);
     }
     
     jobDescription.setGptSkillsExp(JSON.parse(data));

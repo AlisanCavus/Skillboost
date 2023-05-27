@@ -2,6 +2,7 @@
 import { GptSkillsExp } from "@/types/skilExpTypes";
 import { useRouter } from "next/navigation";
 import React from "react";
+import WizardHeader from "../components/WizardHeader";
 
 const GptSkillsExpTable = () => {
   const router = useRouter();
@@ -12,7 +13,12 @@ const GptSkillsExpTable = () => {
     router.push("/step2");
   };
   return (
-    <div className="flex h-full w-full flex-col gap-10 px-4">
+    <WizardHeader
+      p={
+        "These are the most crucial skills experiences and Competences that you must have. If you have these in your CV then you only need a good motivation letter to strengthen up your application."
+      }
+      h2={"Skills, Experiences and Competences"}
+    >
       {gptSkillsExpObj && (
         <div>
           <div>
@@ -45,18 +51,18 @@ const GptSkillsExpTable = () => {
               ))}
             </ul>
           </div>
-          <div>
-          <button
-              onClick={() => {nextPage()}}
-              type="button"
-              className="btn mx-auto bg-brandPrimary text-white"
-            >
-              Next Step!
-            </button>
-          </div>
         </div>
       )}
-    </div>
+      <div className=" flex w-full h-full gap-4 align-center justify-end">
+      <button
+          onClick={() => router.push("/step2")}
+          type="button"
+          className="btn bg-brandPrimary text-white"
+        >
+          Next Step!
+        </button>
+      </div>
+    </WizardHeader>
   );
 };
 

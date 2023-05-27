@@ -5,6 +5,8 @@ import { affindaClient } from "@/affinda.config";
 import { useRouter } from "next/navigation";
 import { DocumentError } from "@affinda/affinda";
 import { Loader } from "../components/Loader";
+import WizardHeader from "../components/WizardHeader";
+import { createMotivLetter } from "@/lib/createMotivLetter";
 
 const UploadResume = () => {
   const router = useRouter();
@@ -25,10 +27,23 @@ const UploadResume = () => {
       if (res.error) {
         setError(res.error);
       }
-      setIsLoading(false);
-      console.log(res);
+      const resume = res.data;
       // save to local storage as resume
-      localStorage.setItem("resume", JSON.stringify(res.data));
+      localStorage.setItem("resume", JSON.stringify(resume));
+      // create motivation letter
+      const motivationLetter = await createMotivLetter({
+        resume,
+        isLoading,
+        setIsLoading,
+      });
+
+      console.log(motivationLetter);
+
+      // // save to local storage as motivation letter
+      // localStorage.setItem("motivationLetter", JSON.stringify(motivationLetter));
+      // // redirect to next page
+      // router.push("/step3");
+
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
@@ -40,7 +55,7 @@ const UploadResume = () => {
   }
 
   return (
-    <>
+    <WizardHeader p={"Now we need your CV for creating ultimate go getter motivation letter, to harden your application to this job."} h2={"A Rock Solid Motivation Letter"}>
       <div>
         <input
           type="file"
@@ -50,7 +65,7 @@ const UploadResume = () => {
           onChange={handleUpload}
         />
       </div>
-    </>
+    </WizardHeader>
   );
 };
 

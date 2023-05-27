@@ -2,13 +2,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { extractJobDesc } from "@/lib";
 import { removeEmojis } from "@/helpers";
-import { Loader } from "./Loader";
+import { Loader } from "../components/Loader";
 import { useRouter } from "next/navigation";
-import GptSkillsExpTable from "../step1/GptSkillsExpTable";
-import { GptSkillsExp } from "@/types/skilExpTypes";
+import WizardHeader from "../components/WizardHeader";
 
 const TextArea = () => {
-  const router = useRouter();
   const ref = useRef<HTMLTextAreaElement>(null);
   const [jobDescription, setJobDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -28,9 +26,9 @@ const TextArea = () => {
 
   const handleClear = () => {
     setJobDescription("");
-    localStorage.removeItem('jobDescription')
+    localStorage.removeItem("jobDescription");
   };
- 
+
   useEffect(() => {
     const savedJobDescription = localStorage.getItem("jobDescription");
     if (savedJobDescription) {
@@ -38,23 +36,22 @@ const TextArea = () => {
     }
   }, []);
 
-  const submitText = async () => {
+  const submitText = () => {
     if (jobDescription === "") {
       alert("Please enter a job description");
     } else {
       setIsLoading(true);
       try {
-        await extractJobDesc({
+        extractJobDesc({
           gptSkillsExp,
           setGptSkillsExp,
           jobDescription,
+          setIsLoading,
+          isLoading,
           setJobDescription: setJobDescription,
         });
       } catch (error) {
         console.error("Error extracting job description:", error);
-      } finally {
-        router.push("/step1");
-        setIsLoading(false);
       }
     }
   };
@@ -63,16 +60,13 @@ const TextArea = () => {
     return <Loader />;
   }
   return (
-    <div className="flex h-full w-full flex-col gap-10 px-4">
-      <div className="h-full w-full flex flex-col gap-4">
-        <h2 className="text-2xl font-medium text-brandSecondary">
-        Welcome to <strong className="underline decoration decoration-brandPrimary">SkillBoost</strong> , the ultimate Job Description Wizard!
-        </h2>
-        <p className="text-md text-brand ">
-           SkillBoost makes the process simple: effortlessly copy and paste job descriptions from the internet. Our advanced algorithm swiftly identifies the essential skills, experiences, and competencies, sorting them to highlight the most critical criteria. Say farewell to manual analysis and embrace a more efficient hiring process. Experience the magic of SkillBoost and supercharge your finding a job efforts today!
-        </p>
-      </div>
-      <div className=" flex w-full h-full justify-start align-start">
+    <WizardHeader
+      p={
+        "SkillBoost makes the process simple: effortlessly copy and paste job descriptions from the internet. Our advanced algorithm swiftly identifies the essential skills, experiences, and competencies, sorting them to highlight the most critical criteria. Say farewell to manual analysis and embrace a more efficient hiring process. Experience the magic of SkillBoost and supercharge your finding a job efforts today!"
+      }
+      h2={"The Ultimate Job Application Wizard!"}
+    >
+      <div className=" align-start flex h-full w-full justify-start">
         <div className="form-control w-full gap-4">
           <textarea
             ref={ref}
@@ -85,27 +79,29 @@ const TextArea = () => {
             className="textarea-secondary textarea w-full"
             placeholder="Copy and paste the job description that gets your attention."
           ></textarea>
-          
-          
         </div>
       </div>
-      <div className=" flex w-full h-full gap-4 align-center justify-end">
-            <button
-              onClick={handleClear}
-              type="button"
-              className={`btn text-white ${jobDescription ? 'opacity-100 cursor-pointer' : 'opacity-0 cursor-auto'} transition-all duration-500 ease-in-out`}
-            >
-              Clear
-            </button>
-            <button
-              onClick={submitText}
-              type="button"
-              className="btn bg-brandPrimary text-white"
-            >
-              Lets Start!
-            </button>
+      <div className=" align-center flex h-full w-full justify-end gap-4">
+        <button
+          onClick={handleClear}
+          type="button"
+          className={`btn text-white ${
+            jobDescription
+              ? "cursor-pointer opacity-100"
+              : "cursor-auto opacity-0"
+          } transition-all duration-500 ease-in-out`}
+        >
+          Clear
+        </button>
+        <button
+          onClick={submitText}
+          type="button"
+          className="btn bg-brandPrimary text-white"
+        >
+          Next Step!
+        </button>
       </div>
-    </div>
+    </WizardHeader>
   );
 };
 

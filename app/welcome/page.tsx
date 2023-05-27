@@ -3,7 +3,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { AuthLayout } from "@/app/components/AuthLayout";
 import { redirect } from "next/navigation";
 import WizardLayout from "@/app/components/WizardLayout";
-import TextArea from "@/app/components/TextArea";
+import TextArea from "@/app/welcome/TextArea";
 
 const Page = async () => {
   const session = await getServerSession(authOptions);
@@ -16,7 +16,7 @@ const Page = async () => {
 
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
-      <WizardLayout >
+      <WizardLayout>
         <TextArea />
       </WizardLayout>
     </AuthLayout>

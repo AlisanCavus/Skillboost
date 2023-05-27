@@ -5,8 +5,8 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <div className="align-center flex my-auto w-full flex-col justify-center rounded-sm gap-10 p-2 text-stone-950 bg-blend-saturation">
-      <div className="align-center flex w-full flex-col items-start gap-6 lg:gap-8 xl:gap-12 lg:ms-20 lg:w-2/3">
-        <h1 className=" w-full lg:text-start text-xl font-bold lg:w-2/3 md:text-5xl md:w-full lg:text-6xl text-center">
+      <div className="align-center flex w-full flex-col items-start gap-6 lg:gap-8 xl:gap-8 lg:ms-20 lg:w-2/3">
+        <h1 className=" w-full lg:text-start text-xl font-bold lg:w-2/3 md:text-4xl md:w-full lg:text-5xl text-center">
           Supercharge Your Freelance Career with <span className=" underline decoration-brandPrimary decoration-solid text-stone-950">SkillBoost.</span>
         </h1>
         <h2 className="text-xl font-semibold text-brandSecondary xl:text-2xl text-start mx-2 lg:mx-0">

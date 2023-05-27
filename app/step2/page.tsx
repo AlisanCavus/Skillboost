@@ -17,10 +17,7 @@ const page = async () => {
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
       <WizardLayout>
-        <div className="flex h-full w-full flex-col items-center justify-center">
-          Lets upload your resume
           <UploadResume />
-        </div>
       </WizardLayout>
     </AuthLayout>
   );
