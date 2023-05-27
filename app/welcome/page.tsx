@@ -16,7 +16,7 @@ const Page = async () => {
 
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
-      <WizardLayout>
+      <WizardLayout >
         <TextArea />
       </WizardLayout>
     </AuthLayout>

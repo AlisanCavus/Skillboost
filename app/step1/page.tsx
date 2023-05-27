@@ -17,7 +17,7 @@ const session = await getServerSession(authOptions);
 
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
-    <WizardLayout>
+    <WizardLayout >
         <div className="flex flex-col items-center justify-center w-full h-full">
             Here is the most relevant skills and experience and the qualifications for this job description
             <GptSkillsExpTable />

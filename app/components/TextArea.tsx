@@ -1,12 +1,11 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { extractJobDesc } from "@/lib";
 import { removeEmojis } from "@/helpers";
 import { Loader } from "./Loader";
 import { useRouter } from "next/navigation";
 import GptSkillsExpTable from "../step1/GptSkillsExpTable";
-import  { GptSkillsExp } from "@/types/skilExpTypes";
-
+import { GptSkillsExp } from "@/types/skilExpTypes";
 
 const TextArea = () => {
   const router = useRouter();
@@ -29,7 +28,15 @@ const TextArea = () => {
 
   const handleClear = () => {
     setJobDescription("");
+    localStorage.removeItem('jobDescription')
   };
+ 
+  useEffect(() => {
+    const savedJobDescription = localStorage.getItem("jobDescription");
+    if (savedJobDescription) {
+      setJobDescription(savedJobDescription);
+    }
+  }, []);
 
   const submitText = async () => {
     if (jobDescription === "") {
@@ -55,46 +62,48 @@ const TextArea = () => {
   if (isLoading) {
     return <Loader />;
   }
-
   return (
-    <div className="flex w-full">
-      <div className="align-center flex h-96 w-96 justify-center">
-        <div className="form-control mx-auto w-96 gap-2">
-          <label htmlFor="jobDescription" className="mx-auto">
-            Job Description
-          </label>
+    <div className="flex h-full w-full flex-col gap-10 px-4">
+      <div className="h-full w-full flex flex-col gap-4">
+        <h2 className="text-2xl font-medium text-brandSecondary">
+        Welcome to <strong className="underline decoration decoration-brandPrimary">SkillBoost</strong> , the ultimate Job Description Wizard!
+        </h2>
+        <p className="text-md text-brand ">
+           SkillBoost makes the process simple: effortlessly copy and paste job descriptions from the internet. Our advanced algorithm swiftly identifies the essential skills, experiences, and competencies, sorting them to highlight the most critical criteria. Say farewell to manual analysis and embrace a more efficient hiring process. Experience the magic of SkillBoost and supercharge your finding a job efforts today!
+        </p>
+      </div>
+      <div className=" flex w-full h-full justify-start align-start">
+        <div className="form-control w-full gap-4">
           <textarea
             ref={ref}
             value={jobDescription}
             onPaste={handlePaste}
             onChange={(e) => setJobDescription(e.target.value)}
             id="jobDescription"
-            className="textarea-secondary textarea textarea-lg mx-auto h-96 w-full"
+            rows={5}
+            cols={10000}
+            className="textarea-secondary textarea w-full"
             placeholder="Copy and paste the job description that gets your attention."
           ></textarea>
-          <div className="mx-auto flex w-full">
+          
+          
+        </div>
+      </div>
+      <div className=" flex w-full h-full gap-4 align-center justify-end">
             <button
               onClick={handleClear}
               type="button"
-              className="btn mx-auto disabled:cursor-not-allowed disabled:opacity-50"
+              className={`btn text-white ${jobDescription ? 'opacity-100 cursor-pointer' : 'opacity-0 cursor-auto'} transition-all duration-500 ease-in-out`}
             >
               Clear
             </button>
             <button
               onClick={submitText}
               type="button"
-              className="btn mx-auto bg-brandPrimary text-white"
+              className="btn bg-brandPrimary text-white"
             >
               Lets Start!
             </button>
-          </div>
-          {isLoading && <div className="loader">Loading...</div>}
-        </div>
-      </div>
-      <div className="h-96 w-96">
-        <div>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit saepe quaerat debitis mollitia pariatur non natus velit exercitationem corporis voluptas dolorum maxime eos dolor, sequi maiores consectetur, at, sed unde.
-        </div>
       </div>
     </div>
   );

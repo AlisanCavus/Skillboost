@@ -5,14 +5,14 @@ import React from "react";
 
 const GptSkillsExpTable = () => {
   const router = useRouter();
-  const gptSkillsExp = localStorage.getItem("gptSkillsExp");
+  const gptSkillsExp = window.localStorage.getItem("gptSkillsExp");
   const gptSkillsExpObj = JSON.parse(gptSkillsExp as string) as GptSkillsExp;
   console.log(gptSkillsExpObj);
   const nextPage = () => {
     router.push("/step2");
   };
   return (
-    <div>
+    <div className="flex h-full w-full flex-col gap-10 px-4">
       {gptSkillsExpObj && (
         <div>
           <div>
