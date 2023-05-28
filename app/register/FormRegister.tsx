@@ -5,6 +5,8 @@ import { redirect, useRouter } from "next/navigation";
 import { signIn} from "next-auth/react";
 import Link from "next/link";
 import { Token } from '@/types/generalTypes';
+import { api } from '@/lib';
+
 
 
 const FormRegister: React.FC<Token> = ({ token }) => {
@@ -21,22 +23,28 @@ const FormRegister: React.FC<Token> = ({ token }) => {
     // Perform client-side validation if needed
 
     // Call your custom backend API endpoint
-    const response = await fetch(
-      "http://localhost:8000/api/anonymous/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          plainPassword: password,
-          termsAndConditionsAgreed: true,
-        }),
-      }
-    );
+    // const response = await fetch(
+    //   `http://localhost:8000/api/anonymous/register`,
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email,
+    //       plainPassword: password,
+    //       termsAndConditionsAgreed: true,
+    //     }),
+    //   }
+    // );
 
-    if (response.ok) {
+    const response = await api.post("/anonymous/register", {
+      email,
+      plainPassword: password,
+      termsAndConditionsAgreed: true,
+    })
+
+    if (response) {
       // Registration successful, log in the user
       const result = await signIn("credentials", {
         redirect: false,
@@ -53,9 +61,8 @@ const FormRegister: React.FC<Token> = ({ token }) => {
         router.push("/welcome");
       }
     } else {
-      // Registration failed, display error message
-      const data = await response.json();
-      setError(data.message);
+      // Registration failed, display error messag
+      setError(response);
     }
   };
 
