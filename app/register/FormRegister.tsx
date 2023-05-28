@@ -103,23 +103,21 @@ const FormRegister: React.FC<Token> = ({ token }) => {
           </div>
         )}
           {loading ? (
-            <button
-              type="submit"
-              className="flex justify-center rounded-sm bg-brandPrimary px-6 py-3 font-bold text-white"
-            >
-              <div className="absolute bottom-1/2 right-1/2  translate-x-1/2 translate-y-1/2 transform ">
-                <div className="h-8 w-8 animate-spin  rounded-full border-2 border-solid border-white border-t-transparent"></div>
-              </div>
-              Processing
-            </button>
+             <button
+             className="flex justify-center items-center rounded-sm bg-brandPrimary px-6 py-3 font-bold text-white gap-8 disabled:opacity-60"
+             type="submit"
+             disabled
+           >
+             <span className="h-6 w-6 animate-spin  rounded-full border-2 border-solid border-white border-t-transparent"></span>
+             Processing
+           </button>
           ) : (
             <button
-              type="submit"
-              disabled
-              className="flex justify-center rounded-sm bg-brandPrimary px-6 py-3 font-bold text-white"
-            >
-              Register
-            </button>
+            className="flex justify-center rounded-sm bg-brandPrimary px-6 py-3 font-bold text-white"
+            type="submit"
+          >
+            Register
+          </button>
           )}
         </div>
         <Link className=" text-brandPrimary" href="/login">

@@ -9,8 +9,8 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "CV Polisher",
-  description: "Linkus CV Polisher",
+  title: "Linkus SkillBoost",
+  description: "Depending on the job description and your CV there is a score that you can use to assess your chances to get the job.",
 };
 
 export default function RootLayout({

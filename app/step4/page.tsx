@@ -4,6 +4,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { AuthLayout } from "@/app/components/AuthLayout";
 import { redirect } from "next/navigation";
 import WizardLayout from "@/app/components/WizardLayout";
+import HireScore from "./HireScore";
 
 const page = async () => {
   const session = await getServerSession(authOptions);
@@ -13,12 +14,11 @@ const page = async () => {
   if (!session) {
     redirect("/");
   }
+
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
       <WizardLayout>
-            <div>
-                step4
-            </div>
+            <HireScore />
       </WizardLayout>
     </AuthLayout>
   )
