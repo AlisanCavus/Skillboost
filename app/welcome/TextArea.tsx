@@ -20,12 +20,6 @@ const TextArea = () => {
     setJobDescription(sanitizedText);
   };
 
-  console.log(jobDescription);
-
-  if (gptSkillsExp) {
-    console.log(gptSkillsExp);
-  }
-
   const handleClear = () => {
     setJobDescription("");
     localStorage.removeItem("jobDescription");
@@ -75,7 +69,7 @@ const TextArea = () => {
             id="jobDescription"
             rows={5}
             cols={10000}
-            className="textarea-secondary textarea w-full"
+            className=" textarea w-full"
             placeholder="Copy and paste the job description that gets your attention."
           ></textarea>
         </div>

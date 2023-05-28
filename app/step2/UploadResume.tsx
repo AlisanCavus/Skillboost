@@ -13,6 +13,8 @@ const UploadResume = () => {
   const [error, setError] = useState<string | undefined | DocumentError>();
   const [isLoading, setIsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [motivLetter, setMotivLetter] = useState();
+  const [letter, setLetter] = useState("");
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -32,13 +34,13 @@ const UploadResume = () => {
       localStorage.setItem("resume", JSON.stringify(resume));
       // create motivation letter
       const motivationLetter = await createMotivLetter({
+        motivLetter,
+        setMotivLetter,
         resume,
         isLoading,
         setIsLoading,
       });
-
-      console.log(motivationLetter);
-
+      
       // // save to local storage as motivation letter
       // localStorage.setItem("motivationLetter", JSON.stringify(motivationLetter));
       // // redirect to next page
@@ -48,6 +50,7 @@ const UploadResume = () => {
         fileInputRef.current.value = "";
       }
     }
+    router.push("/step3");
   };
 
   if (isLoading) {
@@ -55,8 +58,13 @@ const UploadResume = () => {
   }
 
   return (
-    <WizardHeader p={"Now we need your CV for creating ultimate go getter motivation letter, to harden your application to this job."} h2={"A Rock Solid Motivation Letter"}>
-      <div>
+    <WizardHeader
+      p={
+        "Now we need your CV for creating ultimate go getter motivation letter, to harden your application to this job."
+      }
+      h2={"A Rock Solid Motivation Letter"}
+    >
+       <div>
         <input
           type="file"
           className="file-input-bordered file-input-secondary file-input w-full max-w-xs "
@@ -65,6 +73,7 @@ const UploadResume = () => {
           onChange={handleUpload}
         />
       </div>
+      
     </WizardHeader>
   );
 };

@@ -33,11 +33,10 @@ export const createMotivLetter = async (resume: any) => {
     const json = await response.json();
     const data = json.choices[0].text.trim();
     if (data) {
-      console.log(data);
       localStorage.setItem("motivationLetter", data);
       resume.setIsLoading(false);
+      resume.setMotivLetter(true);
     }
-    
     
   } catch (error) {
     console.error("Error fetching API response:", error);
