@@ -17,7 +17,7 @@ export const createMotivLetter = async (resume: any) => {
         job description: ${jobDescription} \n\n
         resume: ${resume.resume} `.trim(),
       temperature: 0.8,
-      max_tokens: 500,
+      max_tokens: 700,
       frequency_penalty: 0.8,
     }),
   };

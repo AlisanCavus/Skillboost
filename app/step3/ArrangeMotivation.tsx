@@ -24,7 +24,7 @@ const ArrangeMotivation = () => {
     if (textareaContent) {
       try {
         // Fetch the template file
-        const response = await fetch('../../templates/motivationLetter.docx');
+        const response = await fetch('/letter.docx');
         const templateData = await response.arrayBuffer();
 
         // Load the template
@@ -70,7 +70,7 @@ const ArrangeMotivation = () => {
           ></textarea>
         </div>
       </div>
-      <div className=" align-center flex h-full w-full justify-end gap-4">
+      <div className=" align-center flex h-full w-full justify-between gap-4">
         { motivation && ( <button
           type="button"
           onClick={generateDocx}
