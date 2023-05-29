@@ -13,6 +13,26 @@ const HireScore = () => {
   const [jobDescription, setJobDescription] = useState(
     localStorage.getItem("jobDescription") || ""
   );
+  const [recomendations, setRecomendations] = useState({} as any);
+  const submitScore = () => {
+    assessScore({
+            resume,
+            jobDescription,
+            error,
+            loading,
+            setLoading,
+            setError,
+            setJobDescription,
+            setResume,
+            recomendations,
+            setRecomendations           
+        })
+
+      if( !error && !loading ){
+        router.push("/step4")
+      }
+  }
+
 
   if (loading) {
     return <Loader />;
@@ -24,16 +44,7 @@ const HireScore = () => {
       h2="Always room for improvement!"
     >
       <div className="align-start flex h-full w-full justify-start">
-        <button onClick={() => assessScore({
-            resume,
-            jobDescription,
-            error,
-            loading,
-            setLoading,
-            setError,
-            setJobDescription,
-            setResume            
-        })}>
+        <button onClick={() => submitScore()}>
           Lets Analyse your application!
         </button>
       </div>

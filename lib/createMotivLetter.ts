@@ -1,6 +1,5 @@
 
 export const createMotivLetter = async (resume: any) => {
-  
   const options = {
     method: "POST",
     headers: {
@@ -14,7 +13,7 @@ export const createMotivLetter = async (resume: any) => {
         job description: ${resume.jobDescription} \n\n
         resume: ${resume.resume} `.trim(),
       temperature: 0.8,
-      max_tokens: 800,
+      max_tokens: 900,
       frequency_penalty: 0.8,
     }),
   };

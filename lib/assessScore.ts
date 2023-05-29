@@ -1,5 +1,4 @@
 export const assessScore = async (allData: any) => {
-  console.log(allData);
   allData.setLoading(true);
   const options = {
     method: "POST",
@@ -38,10 +37,13 @@ export const assessScore = async (allData: any) => {
     if (data) {
       console.log(data);
       localStorage.setItem("assessment", data);
+      allData.setRecomendations(data);
+      allData.setLoading(false);
     }
-    allData.setLoading(false);
+    
   } catch (error) {
     console.error("Error fetching API response:", error);
+    allData.setError(error);
   }
 
   return null;

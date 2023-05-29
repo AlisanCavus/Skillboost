@@ -19,6 +19,8 @@ const UploadResume = () => {
     localStorage.getItem("jobDescription") || ""
   );
 
+  console.log("jobDescription", jobDescription);
+
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -44,11 +46,6 @@ const UploadResume = () => {
         setIsLoading,
         jobDescription,
       });
-      
-      // // save to local storage as motivation letter
-      // localStorage.setItem("motivationLetter", JSON.stringify(motivationLetter));
-      // // redirect to next page
-      // router.push("/step3");
 
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
