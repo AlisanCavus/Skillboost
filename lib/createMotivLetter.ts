@@ -1,11 +1,6 @@
 
 export const createMotivLetter = async (resume: any) => {
-  const jobDescription = window.localStorage.getItem("jobDescription");
-  console.log(jobDescription)
-  console.log(resume.resume)
-  if (!jobDescription) {
-    return "No job description found";
-  }
+  
   const options = {
     method: "POST",
     headers: {
@@ -15,8 +10,8 @@ export const createMotivLetter = async (resume: any) => {
     body: JSON.stringify({
       model: "text-davinci-003",
       prompt:
-        `As a seasoned copywriter and career coach with a proven track record in producing persuasive professional documents, your expertise is required in crafting an outstanding motivational letter. The letter needs to align closely with the provided job description, accentuating the candidate's most fitting skills and experience gleaned from their resume. The end goal is to create a compelling, authentic, and detailed letter that effectively presents the candidate as the perfect fit for the role.​ Remember that the truthfulness of the content is paramount, while it should also be engaging, original, and convincing. Your task is to help the candidate narrate their professional journey, highlight their value proposition, and underscore how their unique capabilities and experiences make them the ideal candidate for the role.​ Consider the job description and the candidate's resume carefully, and then use your writing prowess to paint a vivid picture of the candidate's suitability, skillset, and passion for the role. Your objective is to persuade the hiring manager that the candidate's addition to their team would be a game-changing move for their organization. Please ignore irrelevant job experiences from candidates CV.​ I want you to watch out for the spelling mistakes and so on. Please write the motivation letter as machine-readable format. If there is no candidate name available for you to parse from the CV of candidate, Please replace the name section of the candidate with [Your Name] otherwise keep the name of the candidate. If there is no company name parsed from candidates CV Please replace the company name section with [Company name of your pervious Experience]. Also if you can catch the company name of the job from job description use it in motivation letter otherwise just replace it with [Will be applied Company Name] ​​ \n\n 
-        job description: ${jobDescription} \n\n
+        `As a seasoned copywriter and career coach with a proven track record in producing persuasive professional documents, your expertise is required in crafting an outstanding motivational letter. The letter needs to align closely with the provided job description, accentuating the candidate's most fitting skills and experience gleaned from their resume. The end goal is to create a compelling, authentic, and detailed letter that effectively presents the candidate as the perfect fit for the role. Remember that the truthfulness of the content is paramount, while it should also be engaging, original, and convincing. Your task is to help the candidate narrate their professional journey, highlight their value proposition, and underscore how their unique capabilities and experiences make them the ideal candidate for the role. Consider the job description and the candidate's resume carefully, and then use your writing prowess to paint a vivid picture of the candidate's suitability, skillset, and passion for the role. Your objective is to persuade the hiring manager that the candidate's addition to their team would be a game-changing move for their organization. Please ignore irrelevant job experiences from candidates resume and Please take into account only relevant job experiences from candidate's resume. I want you to watch out for the spelling mistakes and so on. Please write the motivation letter as machine-readable format. If there is no candidate name available for you to parse from the CV of candidate, Please replace the name section of the candidate with [Your Name] otherwise keep the name of the candidate. If there is no company name parsed from candidate's resume Please replace the company name section with [Company name of your pervious Experience]. Also if you can catch the company name of the job from job description use it in motivation letter otherwise just replace it with [Will be applied Company Name]. \n\n 
+        job description: ${resume.jobDescription} \n\n
         resume: ${resume.resume} `.trim(),
       temperature: 0.8,
       max_tokens: 800,

@@ -12,10 +12,7 @@ const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
   const currentUser = useQuery(["userData"], () => getUserInfo(token));
   const { data, isLoading, isError, error } = currentUser;
   const handleSignout = () => {
-    localStorage.removeItem("gptSkillsExp")
-    localStorage.removeItem("jobDescription")
-    localStorage.removeItem("resume")
-    localStorage.removeItem("motivationLetter")
+    localStorage.clear();
     signOut();
   };
 

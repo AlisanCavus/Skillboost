@@ -15,6 +15,9 @@ const UploadResume = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [motivLetter, setMotivLetter] = useState();
   const [letter, setLetter] = useState("");
+  const [jobDescription, setJobDescription] = useState(
+    localStorage.getItem("jobDescription") || ""
+  );
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -39,6 +42,7 @@ const UploadResume = () => {
         resume,
         isLoading,
         setIsLoading,
+        jobDescription,
       });
       
       // // save to local storage as motivation letter
