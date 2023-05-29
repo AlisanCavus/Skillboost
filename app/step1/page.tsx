@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { AuthLayout } from "@/app/components/AuthLayout";
 import { redirect } from "next/navigation";
 import WizardLayout from "@/app/components/WizardLayout";
-import GptSkillsExpTable from './GptSkillsExpTable';
+import GptSkillsExpTable from "./GptSkillsExpTable";
 
 const page = async () => {
-const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
   const token = session?.user.token as string;
   const companyLogo = "/linkusLogo.svg";
 
@@ -17,11 +17,11 @@ const session = await getServerSession(authOptions);
 
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
-    <WizardLayout >
+      <WizardLayout>
         <GptSkillsExpTable />
-    </WizardLayout>
-  </AuthLayout>
-  )
-}
+      </WizardLayout>
+    </AuthLayout>
+  );
+};
 
-export default page
+export default page;

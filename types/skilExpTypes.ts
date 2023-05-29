@@ -1,3 +1,6 @@
+// import type of router from next/navigation
+import AppRouterInstance from "next/navigation";
+
 export interface SkillObject {
   [key: string]: string;
 }
@@ -33,5 +36,6 @@ export interface JobDescription {
   gptSkillsExp: GptSkillsExp;
   setJobDescription: (jobDescription: string) => void;
   setGptSkillsExp: (gptSkillsExp: GptSkillsExp) => void;
+  router: any;
 }
 

@@ -27,10 +27,6 @@ const HireScore = () => {
             recomendations,
             setRecomendations           
         })
-
-      if( !error && !loading ){
-        router.push("/step4")
-      }
   }
 
 
