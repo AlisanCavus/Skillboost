@@ -9,9 +9,6 @@ const GptSkillsExpTable = () => {
   const gptSkillsExp = window.localStorage.getItem("gptSkillsExp");
   const gptSkillsExpObj = JSON.parse(gptSkillsExp as string) as GptSkillsExp;
   
-  const nextPage = () => {
-    router.push("/step2");
-  };
   return (
     <WizardHeader
       p={

@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { extractJobDesc } from "@/lib";
 import { removeEmojis } from "@/helpers";
-import { Loader } from "../components/Loader";
+import LoaderJobDescript from "../components/LoaderJobDescript";
 import { useRouter } from "next/navigation";
 import WizardHeader from "../components/WizardHeader";
 
@@ -45,12 +45,13 @@ const TextArea = () => {
         setIsLoading,
         isLoading,
         setJobDescription,
+        router,
       });
     }
   };
 
   if (isLoading) {
-    return <Loader />;
+    return <LoaderJobDescript />;
   }
   return (
     <WizardHeader
