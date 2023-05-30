@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 
@@ -25,14 +24,14 @@ const HeroSection = () => {
       <div className="align-center flex w-full justify-center lg:justify-start gap-2 lg:ms-20 lg:w-2/3">
         <Link
           href="/login"
-          className="flex transform justify-center rounded-lg px-2 py-1 font-bold text-brandPrimary hover:bg-brandBackground lg:px-6 lg:py-3"
+          className="btn text-brandPrimary bg-white hover:text-white hover:bg-brandPrimary border-brandPrimary"
           type="submit"
         >
           Login
         </Link>
         <Link
           href="/register"
-          className="flex justify-center rounded-lg bg-brandPrimary px-2 py-1 font-bold text-white lg:px-6 lg:py-3"
+          className="btn bg-brandPrimary text-white hover:bg-brandSecondary"
           type="submit"
         >
           Create your Free Account!

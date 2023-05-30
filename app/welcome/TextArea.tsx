@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { extractJobDesc } from "@/lib";
-import { removeEmojis } from "@/helpers";
+import { removeEmojis, sanitizeText } from "@/helpers";
 import LoaderJobDescript from "../components/LoaderJobDescript";
 import { useRouter } from "next/navigation";
 import WizardHeader from "../components/WizardHeader";
+import { loadingContext } from "@/helpers";
+import { ContextContentType } from "@/types/generalTypes";
 
 const TextArea = () => {
   const router = useRouter();
@@ -14,10 +16,24 @@ const TextArea = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [gptSkillsExp, setGptSkillsExp] = useState({}) as any;
 
+  const [context, setContext] = useState<ContextContentType>(
+    loadingContext[Math.floor(Math.random() * loadingContext.length)]
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setContext(loadingContext[Math.floor(Math.random() * loadingContext.length)]);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handlePaste = (event: React.ClipboardEvent<HTMLTextAreaElement>) => {
     const pastedText = event.clipboardData.getData("text/plain");
     const sanitizedText = removeEmojis(pastedText);
-    setJobDescription(sanitizedText);
+    const superSanitizedText = sanitizeText(sanitizedText);
+    setJobDescription(superSanitizedText);
+    console.log(superSanitizedText);
   };
 
   const handleClear = () => {
@@ -51,7 +67,7 @@ const TextArea = () => {
   };
 
   if (isLoading) {
-    return <LoaderJobDescript />;
+    return <LoaderJobDescript context={context} />;
   }
   return (
     <WizardHeader
@@ -92,7 +108,7 @@ const TextArea = () => {
           type="button"
           className="btn bg-brandPrimary text-white"
         >
-          Next Step!
+          Let&apos;s Start!
         </button>
       </div>
     </WizardHeader>

@@ -18,7 +18,7 @@ export const UnAuthLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
     <div className="flex max-h-max min-h-screen w-full flex-col items-center justify-between gap-8 overflow-hidden bg-transparent md:mt-0 md:gap-0 xl:justify-between">
       <TopBar />
       <div className=" my-auto flex min-h-max w-11/12 flex-col items-center justify-center ">
-        <div className=" mb-2 flex w-11/12 items-start justify-start md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5">
+        <div className="h-16 flex w-11/12 items-start justify-start md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5">
           {/* <Image src={LinkusLogo} alt="Linkus logo" /> */}
           <Image
             src={logoImage}

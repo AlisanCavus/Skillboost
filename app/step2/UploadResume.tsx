@@ -1,25 +1,40 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { affindaClient } from "@/affinda.config";
 import { useRouter } from "next/navigation";
 import { DocumentError } from "@affinda/affinda";
 import { Loader } from "../components/Loader";
 import WizardHeader from "../components/WizardHeader";
 import { createMotivLetter } from "@/lib/createMotivLetter";
+import LoaderJobDescript from "../components/LoaderJobDescript";
+import { loadingContext } from "@/helpers";
+import { ContextContentType } from "@/types/generalTypes";
 
 const UploadResume = () => {
   const router = useRouter();
   const [error, setError] = useState<string | undefined | DocumentError>();
   const [isLoading, setIsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [motivLetter, setMotivLetter] = useState();
+  const [motivLetter, setMotivLetter] = useState("");
   const [letter, setLetter] = useState("");
   const [jobDescription, setJobDescription] = useState(
     localStorage.getItem("jobDescription") || ""
   );
 
   console.log("jobDescription", jobDescription);
+
+  const [context, setContext] = useState<ContextContentType>(
+    loadingContext[Math.floor(Math.random() * loadingContext.length)]
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setContext(loadingContext[Math.floor(Math.random() * loadingContext.length)]);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -55,7 +70,7 @@ const UploadResume = () => {
   };
 
   if (isLoading) {
-    return <Loader />;
+    return <LoaderJobDescript context={context} />;
   }
 
   return (

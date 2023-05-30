@@ -5,6 +5,7 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Discover exciting opportunities and join our freelance network to work with top companies in Belgium.",
+    source: "",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const loadingContext = [
     title: "Did you know that ...",
     content:
       "Learn how our platform connects talented freelancers with companies seeking their expertise.",
+    source: "",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Did you know that there are over 150,000 registered freelancers in Belgium? Join them today!",
+    source: "",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Gain access to a wide range of interesting projects across various industries as a freelancer.",
+    source: "",
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "As a freelancer, enjoy the freedom to choose your own working hours and achieve a better work-life balance.",
+    source: "",
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ export const loadingContext = [
     title: "Did you know that ...",
     content:
       "Embrace the freedom of working remotely as a freelancer, delivering high-quality results from anywhere.",
+    source: "",
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Join a vibrant community of freelancers and collaborate with innovative companies driving change.",
+    source: "",
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Discover the high demand for freelancers in Belgium and explore opportunities in growing industries.",
+    source: "",
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Networking is key! Connect with professionals, build relationships, and expand your freelance network.",
+    source: "",
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Explore the benefits of freelancing in Belgium, including tax advantages and a thriving gig economy.",
+    source: "",
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Read inspiring success stories of freelancers who have achieved remarkable success in their careers.",
+    source: "",
   },
   {
     id: 12,
@@ -82,6 +93,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Continuously learn and upskill yourself to stay competitive in the freelance market and unlock new opportunities.",
+    source: "",
   },
   {
     id: 13,
@@ -89,6 +101,7 @@ export const loadingContext = [
     title: "Did you know that ...",
     content:
       "Enjoy the perks of being a freelancer, including flexibility, autonomy, and the ability to choose your projects.",
+    source: "",
   },
   {
     id: 14,
@@ -96,6 +109,7 @@ export const loadingContext = [
     title: "Did you know that ...",
     content:
       "Learn about essential elements to include in freelance contracts for smooth collaboration with clients.",
+    source: "",
   },
   {
     id: 15,
@@ -103,6 +117,7 @@ export const loadingContext = [
     title: "Did you know that ...",
     content:
       "Connect with like-minded freelancers in Belgium, join communities, and share insights and experiences.",
+    source: "",
   },
   {
     id: 16,
@@ -110,6 +125,7 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Achieve a better work-life balance as a freelancer, enjoying flexibility and control over your schedule.",
+    source: "",
   },
   {
     id: 17,
@@ -117,6 +133,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Explore various payment options and platforms that make it easy to receive payments as a freelancer.",
+    source: "",
   },
   {
     id: 18,
@@ -124,6 +141,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Build an impressive portfolio as a freelancer, showcasing your skills and attracting potential clients.",
+    source: "",
   },
   {
     id: 19,
@@ -131,6 +149,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Understand the tax obligations and benefits associated with freelancing in Belgium.",
+    source: "",
   },
   {
     id: 20,
@@ -138,6 +157,7 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Discover the latest trends and predictions for the future of freelancing, including the gig economy's growth.",
+    source: "",
   },
   {
     id: 21,
@@ -145,6 +165,7 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Determine competitive rates and pricing strategies to ensure fair compensation for your freelance services.",
+    source: "",
   },
   {
     id: 22,
@@ -152,6 +173,7 @@ export const loadingContext = [
     title: "Did you know that ...",
     content:
       "Explore insurance options tailored for freelancers to protect yourself and your business.",
+    source: "",
   },
   {
     id: 23,
@@ -159,6 +181,7 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Discover essential tools and resources that can streamline your freelance workflow and boost productivity.",
+    source: "",
   },
   {
     id: 24,
@@ -166,6 +189,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Master effective communication strategies to build strong relationships with your freelance clients.",
+    source: "",
   },
   {
     id: 25,
@@ -173,6 +197,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Understand important legal aspects, such as contracts, intellectual property, and copyright, as a freelancer.",
+    source: "",
   },
   {
     id: 26,
@@ -180,6 +205,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Explore the benefits of specializing in a niche as a freelancer and how it can set you apart from the competition.",
+    source: "",
   },
   {
     id: 27,
@@ -187,6 +213,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Learn effective time management techniques to maximize your productivity and meet client deadlines.",
+    source: "",
   },
   {
     id: 28,
@@ -194,6 +221,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Discover marketing strategies to promote your freelance services and attract high-quality clients.",
+    source: "",
   },
   {
     id: 29,
@@ -201,6 +229,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Engage in continuous learning and intellectual growth to stay ahead in the ever-evolving freelance landscape.",
+    source: "",
   },
   {
     id: 30,
@@ -208,6 +237,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Find fulfillment and satisfaction in your freelance career by aligning your work with your passions.",
+    source: "",
   },
   {
     id: 31,
@@ -215,6 +245,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Explore the latest trends and insights into the global freelancing landscape, including growth and market predictions.",
+    source: "",
   },
   {
     id: 32,
@@ -222,6 +253,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Discover the rise of freelancing in Europe, including popular freelance industries and emerging markets.",
+    source: "",
   },
   {
     id: 33,
@@ -229,6 +261,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Explore the demographics of freelancers worldwide, including age, gender, and educational backgrounds.",
+    source: "",
   },
   {
     id: 34,
@@ -236,6 +269,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Gain insights into the distribution of freelance income, including variations based on location and industry.",
+    source: "",
   },
   {
     id: 35,
@@ -243,6 +277,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Discover different work models within freelancing, such as solopreneurship, agency collaboration, and remote teams.",
+    source: "",
   },
   {
     id: 36,
@@ -250,6 +285,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Learn about the overall satisfaction levels reported by freelancers globally and factors influencing their happiness.",
+    source: "",
   },
   {
     id: 37,
@@ -257,6 +293,7 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Explore the significant impact of the freelance gig economy on employment and the future of work.",
+    source: "",
   },
   {
     id: 38,
@@ -264,6 +301,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Discover the growth trajectory of freelancer earnings worldwide and the factors contributing to this growth.",
+    source: "",
   },
   {
     id: 39,
@@ -271,6 +309,7 @@ export const loadingContext = [
     title: "Did you know that ... ",
     content:
       "Gain insights into freelancer work preferences, such as project-based work, long-term contracts, or retainer agreements.",
+    source: "",
   },
   {
     id: 40,
@@ -278,5 +317,6 @@ export const loadingContext = [
     title: "Did you know that ...  ",
     content:
       "Learn about the intersection of freelancing and digital nomadism, enabling location-independent work and travel.",
-  }
+    source: "",
+  },
 ];

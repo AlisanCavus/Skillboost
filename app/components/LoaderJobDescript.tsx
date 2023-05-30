@@ -1,42 +1,24 @@
-
 'use client';
 import React, { FC, PropsWithChildren, useEffect, useState } from "react";
-import WizardHeader from "./WizardHeader";
-import { loadingContext } from "@/helpers";
+import WizardHeaderLoader from "./WizardHeader";
 import Image from "next/image";
-import { createClient, PhotosWithTotalResults, ErrorResponse } from "pexels";
-
-const LoaderJobDescript = () => {
-  const [context, setContext] = useState(
-    loadingContext[Math.floor(Math.random() * loadingContext.length)]
-  );
-
-  const [animateFadeIn, setAnimateFadeIn] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setContext(loadingContext[Math.floor(Math.random() * loadingContext.length)]);
-      setAnimateFadeIn(true);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setAnimateFadeIn(false);
-    }, 1000);
-
-    return () => clearTimeout(timeout);
-  }, [context]);
-
+import { ContextType } from '@/types/generalTypes';
+const LoaderJobDescript: FC<PropsWithChildren<ContextType>> = ({context}) => {
+  
   return (
-    <WizardHeader p={context.content} h2={context.title}>
+    <div className="flex h-full w-full flex-col gap-10 px-4 min-h-[20rem] animate-fadeIn">
       <div className="flex h-full w-full flex-col gap-10 px-4 transition-opacity duration-500">
         <div className="flex h-full w-full flex-col gap-4">
+          <Image src={"./Vector.svg"} alt={"Logo of Linkus"} width={100} height={100} className=" animate-spin"/>
+          <h2 className="text-xl text-slate-500">Analysing the Job Detail...</h2>
         </div>
       </div>
-    </WizardHeader>
+      <div className="h-full w-full flex flex-col gap-4">
+        <h2 className="text-2xl font-medium text-brandSecondary ">{context.title}</h2>
+        <p className="text-md text-brand animate-fadeIn after:animate-fadeOut">{context.content}</p>
+      </div>
+      
+    </div>
   );
 };
 
