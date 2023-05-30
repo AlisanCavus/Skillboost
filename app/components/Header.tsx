@@ -40,9 +40,8 @@ const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
               {currentUser.data?.fullName ? (<span className="align-middle font-roboto text-lg font-light tracking-widest text-brandSecondary ">
                 Hi, {currentUser.data?.fullName}
               </span>) : (<span className="align-middle font-roboto text-lg font-light tracking-widest text-brandSecondary ">
-                SKILLBOOST
+                WELCOME TO LINKUS
               </span>)}
-              
             </div>
           </div>
         </div>
@@ -52,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {
         <div className="flex w-1/5 items-center justify-center"></div>
         <div className="mt-1.5 me-2 w-11/12 flex items-center justify-end gap-4">
           <button
-            className="flex justify-center rounded-lg bg-brandPrimary px-2 py-1 gap-2 font-bold text-white lg:px-6 lg:py-3"
+            className="btn bg-brandPrimary text-white gap-2"
             onClick={() => handleSignout()}
           >
             <TbLogout className="my-auto"/>

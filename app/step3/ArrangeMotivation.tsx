@@ -13,6 +13,8 @@ const ArrangeMotivation = () => {
     localStorage.getItem("motivationLetter") || ""
   );
 
+  
+
   const handleMotivationChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setMotivation(event.target.value);
   };

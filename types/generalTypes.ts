@@ -7,6 +7,28 @@ export interface ToastTypes {
   message: string;
 }
 
+export type WizardHeaderProps = {
+  p: string;
+  h2: string;
+  span?: string;
+  context?: ContextContentType;
+  children?: React.ReactNode;
+};
+
+export interface ContextContentType {
+  id: number;
+  img: string;
+  title: string;
+  content: string;
+  source?: string | undefined;
+  children?: React.ReactNode;
+}
+export type ContextType = {
+  context: ContextContentType;
+  children?: React.ReactNode;
+}
+  
+
 export type UnAuthLayoutProps = {
   logoImage: string;
   companyName: string;

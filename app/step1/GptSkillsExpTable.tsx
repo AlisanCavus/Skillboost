@@ -8,7 +8,7 @@ const GptSkillsExpTable = () => {
   const router = useRouter();
   const gptSkillsExp = window.localStorage.getItem("gptSkillsExp");
   const gptSkillsExpObj = JSON.parse(gptSkillsExp as string) as GptSkillsExp;
-  
+
   return (
     <WizardHeader
       p={
@@ -50,8 +50,15 @@ const GptSkillsExpTable = () => {
           </div>
         </div>
       )}
-      <div className=" flex w-full h-full gap-4 align-center justify-end">
-      <button
+      <div className=" align-center flex h-full w-full justify-between gap-4">
+        <button
+          onClick={() => router.back()}
+          type="button"
+          className="btn text-white"
+        >
+          Previous Step
+        </button>
+        <button
           onClick={() => router.push("/step2")}
           type="button"
           className="btn bg-brandPrimary text-white"

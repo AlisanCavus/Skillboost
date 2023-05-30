@@ -1,19 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WizardHeader from "../components/WizardHeader";
 import { useRouter } from "next/navigation";
 import { assessScore } from "@/lib/assessScore";
-import { Loader } from "../components/Loader";
+import LoaderJobDescript from "../components/LoaderJobDescript";
+import { loadingContext } from "@/helpers";
+import { ContextContentType } from "@/types/generalTypes";
 
 const HireScore = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [resume, setResume] = useState(JSON.parse(localStorage.getItem("resume") as any) || "");
-  const [jobDescription, setJobDescription] = useState(
-    localStorage.getItem("jobDescription") || ""
-  );
+  const resume = JSON.parse(localStorage.getItem("resume") as any);
+  console.log(resume);
+  const jobDescription = localStorage.getItem("jobDescription");
   const [recomendations, setRecomendations] = useState({} as any);
+
+  const [context, setContext] = useState<ContextContentType>(
+    loadingContext[Math.floor(Math.random() * loadingContext.length)]
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setContext(loadingContext[Math.floor(Math.random() * loadingContext.length)]);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const submitScore = () => {
     assessScore({
             resume,
@@ -22,16 +36,12 @@ const HireScore = () => {
             loading,
             setLoading,
             setError,
-            setJobDescription,
-            setResume,
             recomendations,
             setRecomendations           
         })
   }
-
-
   if (loading) {
-    return <Loader />;
+    return <LoaderJobDescript context={context}/>;
     }
 
   return (
