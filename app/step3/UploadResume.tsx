@@ -18,11 +18,10 @@ const UploadResume = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [motivLetter, setMotivLetter] = useState("");
   const [letter, setLetter] = useState("");
+  const [stateResume, setStateResume] = useState({} as any);
   const [jobDescription, setJobDescription] = useState(
     localStorage.getItem("jobDescription") || ""
   );
-
-  console.log("jobDescription", jobDescription);
 
   const [context, setContext] = useState<ContextContentType>(
     loadingContext[Math.floor(Math.random() * loadingContext.length)]
@@ -66,11 +65,11 @@ const UploadResume = () => {
         fileInputRef.current.value = "";
       }
     }
-    router.push("/step3");
+    router.push("/step4");
   };
 
   if (isLoading) {
-    return <LoaderJobDescript context={context} />;
+    return <LoaderJobDescript context={context} status={"Uploading your CV and Parsing the information."} />;
   }
 
   return (

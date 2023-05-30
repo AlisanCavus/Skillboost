@@ -37,7 +37,7 @@ export const extractJobDesc = async (jobDescription: JobDescription) => {
       localStorage.setItem("gptSkillsExp", data);
       jobDescription.setGptSkillsExp(JSON.parse(data));
       jobDescription.setEverythingOK(true);
-      jobDescription.router.push("/step1");
+      jobDescription.router.push("/step2");
       jobDescription.setIsLoading(false);
     }
     

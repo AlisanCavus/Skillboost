@@ -26,6 +26,7 @@ export interface ContextContentType {
 export type ContextType = {
   context: ContextContentType;
   children?: React.ReactNode;
+  status: string;
 }
   
 

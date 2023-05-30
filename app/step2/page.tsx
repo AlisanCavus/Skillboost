@@ -4,7 +4,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { AuthLayout } from "@/app/components/AuthLayout";
 import { redirect } from "next/navigation";
 import WizardLayout from "@/app/components/WizardLayout";
-import UploadResume from "./UploadResume";
+import GptSkillsExpTable from "./GptSkillsExpTable";
 
 const page = async () => {
   const session = await getServerSession(authOptions);
@@ -14,10 +14,11 @@ const page = async () => {
   if (!session) {
     redirect("/");
   }
+
   return (
     <AuthLayout token={token} companyLogo={companyLogo}>
       <WizardLayout>
-          <UploadResume />
+        <GptSkillsExpTable />
       </WizardLayout>
     </AuthLayout>
   );

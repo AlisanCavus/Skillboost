@@ -41,7 +41,7 @@ const HireScore = () => {
         })
   }
   if (loading) {
-    return <LoaderJobDescript context={context}/>;
+    return <LoaderJobDescript context={context} status={"Analysing your chances for this job description..."}/>;
     }
 
   return (
@@ -57,7 +57,7 @@ const HireScore = () => {
       <div className="align-center flex h-full w-full justify-between gap-4">
         <button
           type="button"
-          onClick={() => router.push("/step4")}
+          onClick={() => router.push("/step6")}
           className="btn bg-brandPrimary text-white"
         >
           Next Step!

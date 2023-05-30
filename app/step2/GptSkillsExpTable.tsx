@@ -59,7 +59,7 @@ const GptSkillsExpTable = () => {
           Previous Step
         </button>
         <button
-          onClick={() => router.push("/step2")}
+          onClick={() => router.push("/step3")}
           type="button"
           className="btn bg-brandPrimary text-white"
         >
