@@ -30,7 +30,7 @@ const UploadResume = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setContext(loadingContext[Math.floor(Math.random() * loadingContext.length)]);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);

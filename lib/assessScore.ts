@@ -34,7 +34,6 @@ export const assessScore = async (allData: any) => {
     const data = json.choices[0].text.trim();
 
     if (data) {
-      console.log(data);
       localStorage.setItem("score", data);
       allData.setRecomendations(data);
       allData.setLoading(false);

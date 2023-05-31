@@ -12,9 +12,10 @@ const LoaderJobDescript: FC<PropsWithChildren<ContextType>> = ({context, status}
           <h2 className="text-xl text-slate-500">{status}</h2>
         </div>
       </div>
-      <div className="h-full w-full flex flex-col gap-4">
-        <h2 className="text-2xl font-medium text-brandSecondary ">{context.title}</h2>
-        <p className="text-md text-brand animate-fadeIn after:animate-fadeOut">{context.content}</p>
+      <div className="h-full w-full flex flex-col gap-4 animate-fadeIn">
+        <h2 className="text-2xl font-medium text-brandSecondary animate-fadeIn ">{context.title}</h2>
+        <p className="text-md text-brandSecondary animate-fadeIn">{context.content}</p>
+        <span className="text-sm text-slate-400 italic">{context.source}</span>
       </div>
       
     </div>
