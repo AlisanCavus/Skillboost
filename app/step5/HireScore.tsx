@@ -47,7 +47,7 @@ const HireScore = () => {
   return (
     <WizardHeader
       p="Depends on the job description and your CV there is a score that you can use to assess your chances to get the job."
-      h2="Always room for improvement!"
+      h2="Assess Your Application"
     >
       <div className="align-center flex h-full w-full justify-between gap-4">
         <button

@@ -13,12 +13,12 @@ const GptSkillsExpTable = () => {
       p={
         "These are the most crucial skills experiences and Competences that you must have. If you have these in your CV then you only need a good motivation letter to strengthen up your application."
       }
-      h2={"Skills, Experiences and Competences"}
+      h2={"See the Requirements"}
     >
       {gptSkillsExpObj && (
         <div>
           <div>
-            <h1 className=" font-bold">Skills</h1>
+            <h1 className="font-bold">Skills</h1>
             <ul>
               {gptSkillsExpObj.skills.map((skill, index) => (
                 <li className=" list-disc" key={index}>

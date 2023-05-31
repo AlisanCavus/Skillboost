@@ -9,30 +9,30 @@ const Assesment = () => {
   return (
     <WizardHeader
       p="Depends on the job description and your CV there is a score that you can use to assess your chances to get the job."
-      h2="This is your score!"
+      h2="Get Your Score"
     >
       <div className="align-center flex h-full w-full justify-between gap-4">
         {scoreObj && (
           <div>
             <div className="flex flex-col items-center">
-              <p className="text-2xl font-bold ">Your score</p>
-              <h2 className="text-5xl font-bold ">{scoreObj.score}</h2>
+              <h1 className="text-xl ">Your score</h1>
+              <p className="text-md ">{scoreObj.score}</p>
             </div>
             <div>
-              <p className="text-2xl font-bold">Your score</p>
-              <h2 className="text-5xl font-bold">{scoreObj.explanation}</h2>
+              <h1 className="text-xl">Your score</h1>
+              <p className="text-md">{scoreObj.explanation}</p>
             </div>
             <div>
-              <p className="text-2xl font-bold ">Improvements</p>
-              <h2 className="text-5xl font-bold ">
-                <ol className="flex flex-col gap-4">
+              <h1 className="text-xl ">Improvements</h1>
+              <div className="text-xl ">
+                <ul className="flex flex-col gap-4">
                   {scoreObj.improvements.map(
                     (improvement: any, index: number) => (
-                      <li key={index}>{improvement}</li>
+                      <li className="list-disc" key={index}>{improvement}</li>
                     )
                   )}
-                </ol>
-              </h2>
+                </ul>
+              </div>
             </div>
           </div>
         )}
