@@ -67,7 +67,7 @@ const TextArea = () => {
   };
 
   if (isLoading) {
-    return <LoaderJobDescript context={context} />;
+    return <LoaderJobDescript context={context} status={"Analysing the job Description..."}/>;
   }
   return (
     <WizardHeader
@@ -84,7 +84,7 @@ const TextArea = () => {
             onPaste={handlePaste}
             onChange={(e) => setJobDescription(e.target.value)}
             id="jobDescription"
-            rows={5}
+            rows={7}
             cols={10000}
             className=" textarea w-full"
             placeholder="Copy and paste the job description that gets your attention."

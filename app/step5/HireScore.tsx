@@ -12,7 +12,6 @@ const HireScore = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const resume = JSON.parse(localStorage.getItem("resume") as any);
-  console.log(resume);
   const jobDescription = localStorage.getItem("jobDescription");
   const [recomendations, setRecomendations] = useState({} as any);
 
@@ -37,11 +36,12 @@ const HireScore = () => {
             setLoading,
             setError,
             recomendations,
-            setRecomendations           
+            setRecomendations,
+            router        
         })
   }
   if (loading) {
-    return <LoaderJobDescript context={context}/>;
+    return <LoaderJobDescript context={context} status={"Analysing your chances for this job description..."}/>;
     }
 
   return (
@@ -49,18 +49,13 @@ const HireScore = () => {
       p="Depends on the job description and your CV there is a score that you can use to assess your chances to get the job."
       h2="Always room for improvement!"
     >
-      <div className="align-start flex h-full w-full justify-start">
-        <button onClick={() => submitScore()}>
-          Lets Analyse your application!
-        </button>
-      </div>
       <div className="align-center flex h-full w-full justify-between gap-4">
         <button
           type="button"
-          onClick={() => router.push("/step4")}
+          onClick={() => submitScore()}
           className="btn bg-brandPrimary text-white"
         >
-          Next Step!
+          Lets Analyse your application!
         </button>
       </div>
     </WizardHeader>

@@ -83,7 +83,7 @@ const ArrangeMotivation = () => {
      
       <button
           type="button"
-          onClick={() => router.push("/step4")}
+          onClick={() => router.push("/step5")}
           className="btn bg-brandPrimary text-white"
         >
           Next Step!

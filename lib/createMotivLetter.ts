@@ -30,8 +30,8 @@ export const createMotivLetter = async (resume: any) => {
     const data = json.choices[0].text.trim();
     if (data) {
       localStorage.setItem("motivationLetter", data);
-      resume.setIsLoading(false);
       resume.setMotivLetter(JSON.parse(data));
+      resume.setIsLoading(false);
     }
     
   } catch (error) {
