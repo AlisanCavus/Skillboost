@@ -5,7 +5,6 @@ import classNames from "classnames";
 
 const SideBar = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   // Define the steps and their corresponding URLs
   const stepUrlMapping = {
@@ -14,6 +13,7 @@ const SideBar = () => {
     "/step3": "Upload Your CV",
     "/step4": "Create Motivation Letter",
     "/step5": "Assess your Application",
+    "/step6": "Get your Score",
   };
 
   // Get the title of the current step based on the pathname

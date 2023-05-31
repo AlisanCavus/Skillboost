@@ -4,319 +4,247 @@ export const loadingContext = [
     img: "url1",
     title: "Did you know that ...  ",
     content:
-      "Discover exciting opportunities and join our freelance network to work with top companies in Belgium.",
-    source: "",
+    "In 2018, there were 32.6 million self-employed individuals aged 15 to 74 in the European Union (EU), comprising 14% of total employment. Greece had the highest number of self-employed persons.",
+    source: "https://ec.europa.eu/eurostat",
   },
   {
     id: 2,
     img: "url2",
     title: "Did you know that ...",
     content:
-      "Learn how our platform connects talented freelancers with companies seeking their expertise.",
-    source: "",
+    "In the second quarter of 2021, just under 4% of employed people aged 20-64 in the EU had a second job. Among them, 57% held their second job as employees, while 39% worked as self-employed in their second job.",
+    source: "https://ec.europa.eu/eurostat",
   },
   {
     id: 3,
     img: "url3",
     title: "Did you know that ... ",
     content:
-      "Did you know that there are over 150,000 registered freelancers in Belgium? Join them today!",
-    source: "",
+    "In Belgium, among self-employed individuals, 79% choose to work as self-employed by choice, while the remaining 21% have other reasons for their self-employment.",
+    source: "https://www.european-microfinance.org",
   },
   {
     id: 4,
     img: "url4",
     title: "Did you know that ...  ",
     content:
-      "Gain access to a wide range of interesting projects across various industries as a freelancer.",
-    source: "",
+      "in Belgium, where in principle artists are considered employees, they can be affiliated and get 'artist status' and so perform for a commission paid by a principal.",
+    source: "https://www.european-microfinance.org",
   },
   {
     id: 5,
     img: "url5",
     title: "Did you know that ... ",
     content:
-      "As a freelancer, enjoy the freedom to choose your own working hours and achieve a better work-life balance.",
-    source: "",
+      "In Belgium, the self-employed have a specific social security system, but they are covered for all risks (including sickness benefit), often for a shorter period than employees or through only a flat rate. The exception is unemployment insurance and accidents at work, for which they are not covered.",
+    source: "https://www.european-microfinance.org",
   },
   {
     id: 6,
     img: "url6",
     title: "Did you know that ...",
     content:
-      "Embrace the freedom of working remotely as a freelancer, delivering high-quality results from anywhere.",
-    source: "",
+      "In Belgium, 66% or 2 out of 3 freelancers usually combine several freelance assignments at the same time. 34% indicate that they always work full-time for one client, which means that assignments follow one another.",
+    source: "https://www.unizo.be/",
   },
   {
     id: 7,
     img: "url7",
     title: "Did you know that ... ",
     content:
-      "Join a vibrant community of freelancers and collaborate with innovative companies driving change.",
-    source: "",
+      "The majority of employed Belgians work in the private sector and almost 90% of employees have a permanent contract, in 2022.",
+    source: "https://statbel.fgov.be",
   },
   {
     id: 8,
     img: "url8",
     title: "Did you know that ... ",
     content:
-      "Discover the high demand for freelancers in Belgium and explore opportunities in growing industries.",
-    source: "",
+      "In Belgium, liberal professions are usually ‘intellectual services’ with the following characteristics: the service is mostly an intellectual accomplishment. It can only be practised after significant and continuous training. Personal responsibility is involved. ",
+    source: "https://www.european-microfinance.org",
   },
   {
     id: 9,
     img: "url9",
     title: "Did you know that ... ",
     content:
-      "Networking is key! Connect with professionals, build relationships, and expand your freelance network.",
-    source: "",
+      "On average, freelancers working in web/mobile development, marketing, legal, accounting and other skilled services earn $28 per hour around the world. This rate is higher than 70% of all hourly wages in the US.",
+    source: "https://www.payoneer.com",
   },
   {
     id: 10,
     img: "url10",
     title: "Did you know that ... ",
     content:
-      "Explore the benefits of freelancing in Belgium, including tax advantages and a thriving gig economy.",
-    source: "",
+      "World Bank data shows that 46.4% of all workers worldwide are self-employed in 2021. This means that almost half of the world’s workforce is self-employed.",
+    source: "https://data.worldbank.org",
   },
   {
     id: 11,
     img: "url11",
     title: "Did you know that ... ",
     content:
-      "Read inspiring success stories of freelancers who have achieved remarkable success in their careers.",
-    source: "",
+      "The number of employed people in Belgium were forecast to continuously increase between 2023 and 2024 by in total 0.02 million people (+0.39 percent). The number are estimated to amount to 5.19 million people in 2024.",
+    source: "https://www.statista.com/",
   },
   {
     id: 12,
     img: "url12",
     title: "Did you know that ... ",
     content:
-      "Continuously learn and upskill yourself to stay competitive in the freelance market and unlock new opportunities.",
-    source: "",
+      "People with a foreign origin, those who were born with a foreign nationality or one of their parents was born with a foreign nationality, represent 25.2 per cent of the working population in Belgium",
+    source: "https://www.schengenvisainfo.com/",
   },
   {
     id: 13,
     img: "url13",
     title: "Did you know that ...",
     content:
-      "Enjoy the perks of being a freelancer, including flexibility, autonomy, and the ability to choose your projects.",
-    source: "",
+      "The share of Belgian workers with a second job increases significantly, with a percentage of 5.2% in 2022 compared to 4.5% in 2021.",
+    source: "https://statbel.fgov.be",
   },
   {
     id: 14,
     img: "url14",
     title: "Did you know that ...",
     content:
-      "Learn about essential elements to include in freelance contracts for smooth collaboration with clients.",
-    source: "",
+      "Belgium has set itself the objective of an employment rate of people aged 20-64 of 80% by 2030. In order to achieve that objective, more than 540,000 additional persons need to be employed.",
+    source: "https://statbel.fgov.be",
   },
   {
     id: 15,
     img: "url15",
     title: "Did you know that ...",
     content:
-      "Connect with like-minded freelancers in Belgium, join communities, and share insights and experiences.",
-    source: "",
+      "On LinkedIn, there are 20 million open jobs. 45% Of hirers on LinkedIn explicitly use skills data to fill their roles 8 people are hired every minute on LinkedIn.",
+    source: "https://news.linkedin.com/",
   },
   {
     id: 16,
     img: "url16",
     title: "Did you know that ...  ",
     content:
-      "Achieve a better work-life balance as a freelancer, enjoying flexibility and control over your schedule.",
-    source: "",
+      "In the EU, 7% of employed people worked long hours (working usually 49 hours or more per week) in their main job in 2022.",
+    source: "https://ec.europa.eu/eurostat",
   },
   {
     id: 17,
     img: "url17",
     title: "Did you know that ... ",
     content:
-      "Explore various payment options and platforms that make it easy to receive payments as a freelancer.",
-    source: "",
+      "Employed men in the EU were more likely to be self-employed than women: 16.1% of employed men were self-employed compared with 9.4% of women. ",
+    source: "https://ec.europa.eu/eurostat",
   },
   {
     id: 18,
     img: "url18",
     title: "Did you know that ... ",
     content:
-      "Build an impressive portfolio as a freelancer, showcasing your skills and attracting potential clients.",
-    source: "",
+      "From 2012 to 2022, the number of ICT specialists in the EU surged by 57.8%, which is nearly 6.6 times the growth rate for employment (+8.8%). ",
+    source: "https://ec.europa.eu/eurostat",
   },
   {
     id: 19,
     img: "url19",
     title: "Did you know that ... ",
     content:
-      "Understand the tax obligations and benefits associated with freelancing in Belgium.",
-    source: "",
+      "In 2022, 24 million people worked under a temporary contract in the EU (12% of total employed people aged 15-64).",
+    source: "https://ec.europa.eu/eurostat",
   },
   {
     id: 20,
     img: "url20",
     title: "Did you know that ...  ",
     content:
-      "Discover the latest trends and predictions for the future of freelancing, including the gig economy's growth.",
-    source: "",
+      "In 2021, 23.2% of enterprises experienced at least once a problem due to an ICT security incident, in Belgium",
+    source: "https://statbel.fgov.be",
   },
   {
     id: 21,
     img: "url21",
     title: "Did you know that ...  ",
     content:
-      "Determine competitive rates and pricing strategies to ensure fair compensation for your freelance services.",
-    source: "",
+      "Linkus has 241 job openings as of May 2023 and is expected to grow by at least 50% in the next 5 months.",
+    source: "https://linkus.eu/",
   },
   {
     id: 22,
     img: "url22",
     title: "Did you know that ...",
     content:
-      "Explore insurance options tailored for freelancers to protect yourself and your business.",
-    source: "",
+      "In 2021, 23.2% of enterprises experienced at least once a problem due to an ICT security incident: unavailability of ICT services, destruction or corruption of data, disclosure of confidential data.",
+    source: "https://statbel.fgov.be",
   },
   {
     id: 23,
     img: "url23",
     title: "Did you know that ...  ",
     content:
-      "Discover essential tools and resources that can streamline your freelance workflow and boost productivity.",
-    source: "",
+      "1,433,477 positions of founders, directors and business managers of Belgian enterprises of which 30% were women in 2019, in Belgium.",
+    source: "https://statbel.fgov.be",
   },
   {
     id: 24,
     img: "url24",
     title: "Did you know that ... ",
     content:
-      "Master effective communication strategies to build strong relationships with your freelance clients.",
-    source: "",
+      "Nearly three-quarters (73%) of Gen Zers say they work for a company that uses freelancers; this compares to 67% of millennials, 58% of Gen Xers, and 53% of baby boomers.",
+    source: "https://www.upwork.com/blog",
   },
   {
     id: 25,
     img: "url25",
     title: "Did you know that ... ",
     content:
-      "Understand important legal aspects, such as contracts, intellectual property, and copyright, as a freelancer.",
-    source: "",
+      "Bill Gates is the co-founder of Microsoft and holds the largest following on LinkedIn, with over 35.6 million followers.",
+    source: "https://news.linkedin.com/",
   },
   {
     id: 26,
     img: "url26",
     title: "Did you know that ... ",
     content:
-      "Explore the benefits of specializing in a niche as a freelancer and how it can set you apart from the competition.",
-    source: "",
+      "Millennials (born between 1981-1996) and Gen-Z (born between 1997-2012) represent the majority of the global freelance workforce, with nearly 70% under the age of 35.",
+    source: "https://www.payoneer.com",
   },
   {
     id: 27,
     img: "url27",
     title: "Did you know that ... ",
     content:
-      "Learn effective time management techniques to maximize your productivity and meet client deadlines.",
-    source: "",
+      "Nearly 70% of freelancers work exclusively freelancing with no other source of income. In Europe, this number goes up to 77%. In Central America and the Middle East, just over 40% of freelancers work freelance exclusively.",
+    source: "https://www.payoneer.com",
   },
   {
     id: 28,
     img: "url28",
     title: "Did you know that ... ",
     content:
-      "Discover marketing strategies to promote your freelance services and attract high-quality clients.",
-    source: "",
+      "9 out of 10 IT managers say they would have been forced to delay, cancel or extend project workloads if they didn’t have freelance help.",
+    source: "https://www.upwork.com",
   },
   {
     id: 29,
     img: "url29",
     title: "Did you know that ... ",
     content:
-      "Engage in continuous learning and intellectual growth to stay ahead in the ever-evolving freelance landscape.",
-    source: "",
+      "Google has more freelancers (54%) than Permanent workers (46%).",
+    source: "https://www.demandsage.com",
   },
   {
     id: 30,
     img: "url30",
     title: "Did you know that ... ",
     content:
-      "Find fulfillment and satisfaction in your freelance career by aligning your work with your passions.",
-    source: "",
+      "Singapore, New Zealand, Spain, Australia Denmark are the top 5 countries to stay in if you are a freelancer.",
+    source: "https://www.demandsage.com",
   },
   {
     id: 31,
     img: "url31",
     title: "Did you know that ... ",
     content:
-      "Explore the latest trends and insights into the global freelancing landscape, including growth and market predictions.",
-    source: "",
-  },
-  {
-    id: 32,
-    img: "url32",
-    title: "Did you know that ... ",
-    content:
-      "Discover the rise of freelancing in Europe, including popular freelance industries and emerging markets.",
-    source: "",
-  },
-  {
-    id: 33,
-    img: "url33",
-    title: "Did you know that ... ",
-    content:
-      "Explore the demographics of freelancers worldwide, including age, gender, and educational backgrounds.",
-    source: "",
-  },
-  {
-    id: 34,
-    img: "url34",
-    title: "Did you know that ... ",
-    content:
-      "Gain insights into the distribution of freelance income, including variations based on location and industry.",
-    source: "",
-  },
-  {
-    id: 35,
-    img: "url35",
-    title: "Did you know that ... ",
-    content:
-      "Discover different work models within freelancing, such as solopreneurship, agency collaboration, and remote teams.",
-    source: "",
-  },
-  {
-    id: 36,
-    img: "url36",
-    title: "Did you know that ... ",
-    content:
-      "Learn about the overall satisfaction levels reported by freelancers globally and factors influencing their happiness.",
-    source: "",
-  },
-  {
-    id: 37,
-    img: "url37",
-    title: "Did you know that ...  ",
-    content:
-      "Explore the significant impact of the freelance gig economy on employment and the future of work.",
-    source: "",
-  },
-  {
-    id: 38,
-    img: "url38",
-    title: "Did you know that ... ",
-    content:
-      "Discover the growth trajectory of freelancer earnings worldwide and the factors contributing to this growth.",
-    source: "",
-  },
-  {
-    id: 39,
-    img: "url39",
-    title: "Did you know that ... ",
-    content:
-      "Gain insights into freelancer work preferences, such as project-based work, long-term contracts, or retainer agreements.",
-    source: "",
-  },
-  {
-    id: 40,
-    img: "url40",
-    title: "Did you know that ...  ",
-    content:
-      "Learn about the intersection of freelancing and digital nomadism, enabling location-independent work and travel.",
-    source: "",
-  },
+      "The coronavirus pandemic caused a 41% increase in freelance job posts. Even if the lockdown has long gone, the gig economy if continuing to survive.",
+    source: "https://www.demandsage.com",
+  }
 ];

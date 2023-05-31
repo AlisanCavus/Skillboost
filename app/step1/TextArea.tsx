@@ -23,7 +23,7 @@ const TextArea = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setContext(loadingContext[Math.floor(Math.random() * loadingContext.length)]);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -33,7 +33,6 @@ const TextArea = () => {
     const sanitizedText = removeEmojis(pastedText);
     const superSanitizedText = sanitizeText(sanitizedText);
     setJobDescription(superSanitizedText);
-    console.log(superSanitizedText);
   };
 
   const handleClear = () => {
