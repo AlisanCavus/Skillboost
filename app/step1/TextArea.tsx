@@ -1,12 +1,13 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import { loadingContext, removeEmojis, sanitizeText } from "@/helpers";
 import { extractJobDesc } from "@/lib";
-import { removeEmojis, sanitizeText } from "@/helpers";
-import LoaderJobDescript from "../components/LoaderJobDescript";
-import { useRouter } from "next/navigation";
-import WizardHeader from "../components/WizardHeader";
-import { loadingContext } from "@/helpers";
 import { ContextContentType } from "@/types/generalTypes";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import LoaderJobDescript from "../components/LoaderJobDescript";
+import WizardHeader from "../components/WizardHeader";
+import { useToastStore } from "@/store/store";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const TextArea = () => {
   const router = useRouter();
@@ -15,6 +16,8 @@ const TextArea = () => {
   const [everythingOK, setEverythingOK] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [gptSkillsExp, setGptSkillsExp] = useState({}) as any;
+  const { isToast, change } = useToastStore();
+  const [error, setError] = useState("");
 
   const [context, setContext] = useState<ContextContentType>(
     loadingContext[Math.floor(Math.random() * loadingContext.length)]
@@ -49,7 +52,8 @@ const TextArea = () => {
 
   const submitText = () => {
     if (jobDescription === "") {
-      alert("Please enter a job description");
+      setError("Please enter a job description!");
+      change(isToast);
     } else {
       extractJobDesc({
         gptSkillsExp,
@@ -69,6 +73,7 @@ const TextArea = () => {
     return <LoaderJobDescript context={context} status={"Analysing the job Description..."}/>;
   }
   return (
+    <>
     <WizardHeader
       p={
         "SkillBoost makes the process simple: effortlessly copy and paste job descriptions from the internet. Our advanced algorithm swiftly identifies the essential skills, experiences, and competencies, sorting them to highlight the most critical criteria. Say farewell to manual analysis and embrace a more efficient hiring process. Experience the magic of SkillBoost and supercharge your finding a job efforts today!"
@@ -111,6 +116,24 @@ const TextArea = () => {
         </button>
       </div>
     </WizardHeader>
+    {error && isToast && (
+      <div className="toast-center toast w-96">
+        <div className="alert alert-warning">
+          <div>
+            <span>{error}</span>
+          </div>
+          <div className="flex-none">
+            <button
+              onClick={() => change(isToast)}
+              className="btn-warning btn-ghost btn"
+            >
+              <IoMdCloseCircle className="h-6 w-6" />
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 };
 

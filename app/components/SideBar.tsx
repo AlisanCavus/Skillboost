@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
-import { useRouter, usePathname } from "next/navigation";
 import classNames from "classnames";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const SideBar = () => {
   const pathname = usePathname();
@@ -22,7 +22,7 @@ const SideBar = () => {
   )?.[1];
 
   return (
-    <div className="h-full w-full min-h-min">
+    <div className="h-full min-h-min w-full">
       <ul className="steps steps-vertical h-[70dvh]">
         {Object.entries(stepUrlMapping).map(([url, title], index) => (
           <li
@@ -31,7 +31,7 @@ const SideBar = () => {
             })}
             key={index}
           >
-            {title}
+            <Link href={url}>{title}</Link>
           </li>
         ))}
       </ul>

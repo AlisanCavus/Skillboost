@@ -1,7 +1,7 @@
-import "./globals.css";
-import { Roboto } from "next/font/google";
 import { Provider } from "@/app/components/Provider";
+import { Roboto } from "next/font/google";
 import ReactQueryWrapper from "./ReactQueryWrapper";
+import "./globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],

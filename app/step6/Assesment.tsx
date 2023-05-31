@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import WizardHeader from "../components/WizardHeader";
 
 const Assesment = () => {

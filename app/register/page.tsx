@@ -1,7 +1,7 @@
-import { UnAuthLayout } from "@/app/components/UnauthLayout";
-import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { UnAuthLayout } from "@/app/components/UnauthLayout";
 import FormRegister from "@/app/register/FormRegister";
+import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
 
 const Page = async () => {

@@ -1,5 +1,5 @@
-import React, { PropsWithChildren, FC } from 'react';
 import { WizardHeaderProps } from '@/types/generalTypes';
+import { FC, PropsWithChildren } from 'react';
 
 const WizardHeader: FC<PropsWithChildren<WizardHeaderProps>> = ({ children, h2, p, span }) => {
   return (

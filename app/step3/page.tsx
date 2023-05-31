@@ -1,9 +1,8 @@
-import React from "react";
-import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { AuthLayout } from "@/app/components/AuthLayout";
-import { redirect } from "next/navigation";
 import WizardLayout from "@/app/components/WizardLayout";
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
 import UploadResume from "./UploadResume";
 
 const page = async () => {

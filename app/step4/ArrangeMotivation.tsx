@@ -1,10 +1,10 @@
 "use client";
-import React, { useState, ChangeEvent, useRef } from "react";
-import WizardHeader from "../components/WizardHeader";
-import { useRouter } from "next/navigation";
 import Docxtemplater from 'docxtemplater';
-import PizZip from 'pizzip';
 import { saveAs } from 'file-saver';
+import { useRouter } from "next/navigation";
+import PizZip from 'pizzip';
+import { ChangeEvent, useRef, useState } from "react";
+import WizardHeader from "../components/WizardHeader";
 
 const ArrangeMotivation = () => {
   const router = useRouter();

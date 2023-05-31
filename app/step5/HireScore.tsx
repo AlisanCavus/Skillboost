@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import WizardHeader from "../components/WizardHeader";
-import { useRouter } from "next/navigation";
-import { assessScore } from "@/lib/assessScore";
-import LoaderJobDescript from "../components/LoaderJobDescript";
 import { loadingContext } from "@/helpers";
+import { assessScore } from "@/lib/assessScore";
 import { ContextContentType } from "@/types/generalTypes";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import LoaderJobDescript from "../components/LoaderJobDescript";
+import WizardHeader from "../components/WizardHeader";
 
 const HireScore = () => {
   const router = useRouter();

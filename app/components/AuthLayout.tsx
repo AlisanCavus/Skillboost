@@ -1,8 +1,7 @@
-import React from 'react'
-import { PropsWithChildren, FC } from "react";
+import Header from "@/app/components/Header";
 import { TopBar } from "@/app/components/TopBar";
-import  Header  from "@/app/components/Header";
 import { AuthLayoutProps } from "@/types/generalTypes";
+import { FC, PropsWithChildren } from "react";
 
 export const AuthLayout: FC<PropsWithChildren<AuthLayoutProps>> = ({
     token,

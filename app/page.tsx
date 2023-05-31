@@ -1,8 +1,8 @@
-import { MainLayout } from '@/app/components/MainLayout';
-import HeroSection from './components/HeroSection';
-import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { MainLayout } from '@/app/components/MainLayout';
+import { getServerSession } from "next-auth/next";
 import { redirect } from 'next/navigation';
+import HeroSection from './components/HeroSection';
 
 export default async function Home() {
   const session = await getServerSession(authOptions);

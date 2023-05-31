@@ -1,11 +1,10 @@
 "use client";
-import React from "react";
-import { signOut } from "next-auth/react";
-import { useQuery } from "@tanstack/react-query";
-import { HeaderProps } from "@/types/generalTypes";
 import { getUserInfo } from "@/lib";
-import { Loader } from "./Loader";
+import { HeaderProps } from "@/types/generalTypes";
+import { useQuery } from "@tanstack/react-query";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
+import React from "react";
 import { TbLogout } from "react-icons/tb";
 
 const Header: React.FC<HeaderProps> = ({ token, companyLogo }) => {

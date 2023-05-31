@@ -1,11 +1,10 @@
 "use client";
-import React, { useRef } from "react";
-import { signIn } from "next-auth/react";
-import { FormEventHandler, useState } from "react";
-import { useRouter, redirect } from "next/navigation";
-import Link from "next/link";
-import { Token } from "@/types/generalTypes";
 import { useToastStore } from "@/store/store";
+import { Token } from "@/types/generalTypes";
+import { signIn } from "next-auth/react";
+import Link from "next/link";
+import { redirect, useRouter } from "next/navigation";
+import React, { FormEventHandler, useRef, useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 const FormLogin: React.FC<Token> = ({ token }) => {
   if (token) {
