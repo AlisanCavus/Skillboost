@@ -6,11 +6,14 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { Token } from "@/types/generalTypes";
 import { api } from "@/lib";
+import { useToastStore } from "@/store/store";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const FormRegister: React.FC<Token> = ({ token }) => {
   if (token) {
     redirect("/welcome");
   }
+  const { isToast, change } = useToastStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -62,7 +65,7 @@ const FormRegister: React.FC<Token> = ({ token }) => {
           <input
             id="email"
             type="email"
-            className="input-bordered input w-full max-w-xl rounded-sm"
+            className="input-bordered input w-full max-w-xl "
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -74,27 +77,33 @@ const FormRegister: React.FC<Token> = ({ token }) => {
             Password
           </label>
           <input
+            pattern=".{8,}"
             id="password"
             type="password"
             placeholder="Password"
-            className="input-bordered input w-full max-w-xl rounded-sm"
+            className="input-bordered input w-full max-w-xl"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <label className="label">
+            <span className="label-text-alt text-xs text-white">
+            *Password must be at least 8 characters.
+            </span>
+          </label>
         </div>
-        <div className="form-control w-full max-w-xl">
+        <div className="form-control mt-4 w-full max-w-xl">
           {loading ? (
             <button
-              className="flex items-center justify-center gap-8 rounded-sm bg-brandPrimary px-6 py-3 font-bold text-white disabled:opacity-60"
+              className="btn-primary btn flex w-full max-w-xl gap-2 border-opacity-60 bg-brandPrimary bg-opacity-50 text-white opacity-100"
               type="submit"
               disabled
             >
-              <span className="h-6 w-6 animate-spin  rounded-full border-2 border-solid border-white border-t-transparent"></span>
-              Processing
+              <span className="h-6 w-6 animate-spin rounded-full border-2 border-solid border-white border-t-transparent"></span>
+              <span className="text-white">Processing</span>
             </button>
           ) : (
             <button
-              className="flex justify-center rounded-sm bg-brandPrimary px-6 py-3 font-bold text-white"
+              className="btn-primary btn w-full max-w-xl text-white"
               type="submit"
             >
               Register
@@ -102,15 +111,22 @@ const FormRegister: React.FC<Token> = ({ token }) => {
           )}
         </div>
         <Link className=" text-brandPrimary" href="/login">
-          {" "}
-          Already have an account ?{" "}
+          Already have an account ?
         </Link>
       </form>
-      {error && (
+      {error && isToast && (
         <div className="toast-center toast w-96">
           <div className="alert alert-error">
             <div>
               <span>{error}</span>
+            </div>
+            <div className="flex-none">
+              <button
+                onClick={() => change(isToast)}
+                className="btn-error btn-ghost btn"
+              >
+                <IoMdCloseCircle className="h-6 w-6" />
+              </button>
             </div>
           </div>
         </div>

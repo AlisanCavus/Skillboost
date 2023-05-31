@@ -4,16 +4,16 @@ import { useRouter, usePathname } from "next/navigation";
 import classNames from "classnames";
 
 const SideBar = () => {
-  const router = useRouter();
   const pathname = usePathname();
+  console.log(pathname);
 
   // Define the steps and their corresponding URLs
   const stepUrlMapping = {
-    "step1": "Copy a Job Description",
-    "step2": "Check Requirements",
-    "step3": "Upload Your CV",
-    "step4": "Download Motivation Letter",
-    "step5": "Assess your Application",
+    "/step1": "Copy a Job Description",
+    "/step2": "Check Requirements",
+    "/step3": "Upload Your CV",
+    "/step4": "Create Motivation Letter",
+    "/step5": "Assess your Application",
   };
 
   // Get the title of the current step based on the pathname
@@ -27,7 +27,7 @@ const SideBar = () => {
         {Object.entries(stepUrlMapping).map(([url, title], index) => (
           <li
             className={classNames("step", {
-              "step-primary": title === currentStepTitle,
+              "step-primary text-brandPrimary": title === currentStepTitle,
             })}
             key={index}
           >

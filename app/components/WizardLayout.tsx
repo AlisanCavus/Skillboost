@@ -4,7 +4,7 @@ import SideBar from "@/app/components/SideBar";
 const WizardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <div className="flex min-h-[calc(100dvh-(4rem+7px))] w-screen flex-col items-start justify-start overflow-x-hidden md:flex-row">
-      <div className="hidden max-h-[calc(100dvh-(4rem+7px))] min-h-min w-72 flex-col items-center justify-start px-4 py-2 md:flex">
+      <div className="hidden max-h-[calc(100dvh-(4rem+7px))] min-h-min w-72 flex-col items-center justify-start px-4 md:py-10 md:flex">
         <div className="flex min-h-min flex-col items-start justify-start overflow-auto">
           <h1 className=" text-3xl text-stone-950 underline decoration-brandPrimary decoration-solid decoration-4">
             SkillBoost

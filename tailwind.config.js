@@ -85,6 +85,7 @@ module.exports = {
           error: "#E60300",
           pc: "#F46A3D",
           p: "#F46A3D",
+          "p-focus": "#F46A3D",
         },
       },
       "light",
