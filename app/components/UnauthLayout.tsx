@@ -1,8 +1,8 @@
 "use client";
-import { PropsWithChildren, FC } from "react";
-import Image from "next/image";
 import { TopBar } from "@/app/components/TopBar";
 import { UnAuthLayoutProps } from "@/types/generalTypes";
+import Image from "next/image";
+import { FC, PropsWithChildren } from "react";
 
 export const UnAuthLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
   children,
@@ -19,7 +19,6 @@ export const UnAuthLayout: FC<PropsWithChildren<UnAuthLayoutProps>> = ({
       <TopBar />
       <div className=" my-auto flex min-h-max w-11/12 flex-col items-center justify-center ">
         <div className="h-16 flex w-11/12 items-start justify-start md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5">
-          {/* <Image src={LinkusLogo} alt="Linkus logo" /> */}
           <Image
             src={logoImage}
             alt="Linkus Logo"

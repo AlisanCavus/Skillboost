@@ -1,5 +1,5 @@
-import React from "react";
 import { ToastTypes } from "@/types/generalTypes";
+import React from "react";
 
 const ToastForms: React.FC<ToastTypes> = ({ type, message }) => {
     // alert-warning

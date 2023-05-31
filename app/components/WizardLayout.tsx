@@ -1,5 +1,5 @@
-import React from "react";
 import SideBar from "@/app/components/SideBar";
+import React from "react";
 
 const WizardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (

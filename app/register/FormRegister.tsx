@@ -1,12 +1,11 @@
 "use client";
-import React from "react";
-import { FormEventHandler, useState } from "react";
-import { redirect, useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
-import Link from "next/link";
-import { Token } from "@/types/generalTypes";
 import { api } from "@/lib";
 import { useToastStore } from "@/store/store";
+import { Token } from "@/types/generalTypes";
+import { signIn } from "next-auth/react";
+import Link from "next/link";
+import { redirect, useRouter } from "next/navigation";
+import React, { FormEventHandler, useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 
 const FormRegister: React.FC<Token> = ({ token }) => {

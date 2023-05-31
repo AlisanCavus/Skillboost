@@ -1,7 +1,6 @@
 "use client";
 import { GptSkillsExp } from "@/types/skilExpTypes";
 import { useRouter } from "next/navigation";
-import React from "react";
 import WizardHeader from "../components/WizardHeader";
 
 const GptSkillsExpTable = () => {

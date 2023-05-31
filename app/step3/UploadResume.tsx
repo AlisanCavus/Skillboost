@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
 import { affindaClient } from "@/affinda.config";
-import { useRouter } from "next/navigation";
-import { DocumentError } from "@affinda/affinda";
-import { Loader } from "../components/Loader";
-import WizardHeader from "../components/WizardHeader";
-import { createMotivLetter } from "@/lib/createMotivLetter";
-import LoaderJobDescript from "../components/LoaderJobDescript";
 import { loadingContext } from "@/helpers";
+import { createMotivLetter } from "@/lib/createMotivLetter";
 import { ContextContentType } from "@/types/generalTypes";
+import { DocumentError } from "@affinda/affinda";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import LoaderJobDescript from "../components/LoaderJobDescript";
+import WizardHeader from "../components/WizardHeader";
 
 const UploadResume = () => {
   const router = useRouter();

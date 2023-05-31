@@ -1,9 +1,9 @@
-import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { AuthLayout } from "@/app/components/AuthLayout";
-import { redirect } from "next/navigation";
 import WizardLayout from "@/app/components/WizardLayout";
 import TextArea from "@/app/step1/TextArea";
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
 
 const Page = async () => {
   const session = await getServerSession(authOptions);
