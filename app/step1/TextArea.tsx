@@ -78,7 +78,7 @@ const TextArea = () => {
       p={
         "SkillBoost makes the process simple: effortlessly copy and paste job descriptions from the internet. Our advanced algorithm swiftly identifies the essential skills, experiences, and competencies, sorting them to highlight the most critical criteria. Say farewell to manual analysis and embrace a more efficient hiring process. Experience the magic of SkillBoost and supercharge your finding a job efforts today!"
       }
-      h2={"The Ultimate Job Application Wizard!"}
+      h2={"Find A job Description"}
     >
       <div className=" align-start flex h-full w-full justify-start">
         <div className="form-control w-full gap-4">

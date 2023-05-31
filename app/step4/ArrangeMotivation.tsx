@@ -56,7 +56,7 @@ const ArrangeMotivation = () => {
   return (
     <WizardHeader
       p="Lets see what we have here. A good motivation letter for the key component of the job applications. Change the sections about company name and your name, and you are ready to go! You can download it as a docx file."
-      h2="This is your motivation letter"
+      h2="Create Motivation Letter"
     >
       <div className=" align-start flex h-full w-full justify-start">
         <div className="form-control w-full gap-4">

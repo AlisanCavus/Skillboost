@@ -8,8 +8,8 @@ const SideBar = () => {
 
   // Define the steps and their corresponding URLs
   const stepUrlMapping = {
-    "/step1": "Copy a Job Description",
-    "/step2": "Check Requirements",
+    "/step1": "Find a Job Description",
+    "/step2": "See the Requirements",
     "/step3": "Upload Your CV",
     "/step4": "Create Motivation Letter",
     "/step5": "Assess your Application",

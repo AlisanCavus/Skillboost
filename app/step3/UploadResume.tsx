@@ -76,7 +76,7 @@ const UploadResume = () => {
       p={
         "Now we need your CV for creating ultimate go getter motivation letter, to harden your application to this job."
       }
-      h2={"A Rock Solid Motivation Letter"}
+      h2={"Upload your CV"}
     >
        <div>
         <input
