@@ -8,7 +8,7 @@ import React, { FormEventHandler, useRef, useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 const FormLogin: React.FC<Token> = ({ token }) => {
   if (token) {
-    redirect("/welcome");
+    redirect("/step1");
   }
   const { isToast, change } = useToastStore();
   const passwordRef = useRef<HTMLInputElement>(null);

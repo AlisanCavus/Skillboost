@@ -8,7 +8,7 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
   const token = session?.user.token as string;
   if (session) {
-    redirect("/welcome");
+    redirect("/step1");
   }
 
   return (

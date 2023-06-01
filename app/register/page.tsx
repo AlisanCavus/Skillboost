@@ -9,7 +9,7 @@ const Page = async () => {
   const token = session?.user.token as string;
 
   if (session) {
-    redirect("/welcome");
+    redirect("/step1");
   }
 
   return (
