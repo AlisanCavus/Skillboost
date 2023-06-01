@@ -50,7 +50,7 @@ const UploadResume = () => {
       // save to local storage as resume
       localStorage.setItem("resume", JSON.stringify(resume));
       setIsResume(resume);
-      if (isResume){
+      if (isResume) {
         router.push("/step4");
       }
     }
@@ -67,17 +67,11 @@ const UploadResume = () => {
 
   return (
     <>
-    <WizardHeader
-      p={
-        "Now we need your CV for creating ultimate go-getter motivation letter, to harden your application to this job."
-      }
-      h2={"Upload your CV"}
-    >
-      
+      <WizardHeader p={"Now we need your CV for creating ultimate go-getter motivation letter, to harden your application to this job."} h2={"Upload your CV"}>
         <div className="form-control mx-auto p-2">
           <input
             type="file"
-            className="file-input file-input-bordered file-input-secondary w-full max-w-xs"
+            className="file-input-bordered file-input-secondary file-input w-full max-w-xs"
             accept=".doc, .docx, .pdf"
             ref={fileInputRef}
             onChange={handleUpload}
@@ -92,27 +86,25 @@ const UploadResume = () => {
           >
             Previous Step
           </button>
-          
         </div>
-      
-    </WizardHeader>
-    {error && isToast && (
-      <div className="toast-center toast w-96">
-        <div className="alert alert-error">
-          <div>
-            <span>{error as string}</span>
-          </div>
-          <div className="flex-none">
-            <button
-              onClick={() => change(isToast)}
-              className="btn-error btn-ghost btn"
-            >
-              <IoMdCloseCircle className="h-6 w-6" />
-            </button>
+      </WizardHeader>
+      {error && isToast && (
+        <div className="toast-center toast w-96">
+          <div className="alert alert-error">
+            <div>
+              <span>{error as string}</span>
+            </div>
+            <div className="flex-none">
+              <button
+                onClick={() => change(isToast)}
+                className="btn-error btn-ghost btn"
+              >
+                <IoMdCloseCircle className="h-6 w-6" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    )}
+      )}
     </>
   );
 };

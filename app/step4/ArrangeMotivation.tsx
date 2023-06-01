@@ -57,6 +57,14 @@ const ArrangeMotivation = () => {
     setMotivation(event.target.value);
   };
 
+  const checkMotivation = () => {
+    if (!motivation || !localMotivation) {
+      return "Are you ready to generate a motivation rock solid motivation letter? Please click on the button below to generate your motivation letter.";
+    } else {
+      return "This is your motivation letter depending on your CV and tailored for the Job Description that you selected. Please feel free to read and fill the necessary parts. After that, You can download your motivation letter as a docx file.";
+    }
+  };
+
   const generateDocx = async () => {
     const textareaContent = textareaRef.current?.value;
     if (textareaContent) {
@@ -89,10 +97,10 @@ const ArrangeMotivation = () => {
 
   return (
     <WizardHeader
-      p="Lets see what we have here. A good motivation letter for the key component of the job applications. Change the sections about company name and your name, and you are ready to go! You can download it as a docx file."
+      p={checkMotivation()}
       h2="Your Motivation Letter"
     >
-      {motivation || localMotivation ? (
+      { (motivation || localMotivation) && (
         <div className=" align-start flex flex-col gap-4 h-full w-full justify-start">
           <div className="form-control w-full gap-4">
             <textarea
@@ -109,19 +117,9 @@ const ArrangeMotivation = () => {
           <button
             type="button"
             onClick={generateDocx}
-            className="btn text-white"
+            className="btn btn-info text-white"
           >
             Download Your Motivation Letter!
-          </button>
-        </div>
-      ) : (
-        <div className=" align-start flex h-full w-full justify-center">
-          <button
-            type="button"
-            onClick={createMotivationLetter}
-            className="btn bg-brandPrimary text-white"
-          >
-            Generate your Motivation Letter!
           </button>
         </div>
       )}
@@ -134,13 +132,24 @@ const ArrangeMotivation = () => {
         >
           Previous Step
         </button>
-        {(motivation || localMotivation) && (
+        <div className=" align-start flex h-full w-full justify-center">
+         
+        </div>
+        {(motivation || localMotivation) ? (
           <button
             type="button"
             onClick={() => router.push("/step5")}
             className="btn bg-brandPrimary text-white"
           >
             Next Step!
+          </button>
+        ) : (
+           <button
+            type="button"
+            onClick={createMotivationLetter}
+            className="btn bg-brandPrimary text-white"
+          >
+            Generate your Motivation Letter!
           </button>
         )}
       </div>
