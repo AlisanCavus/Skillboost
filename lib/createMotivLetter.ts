@@ -36,5 +36,6 @@ export const createMotivLetter = async (resume: any) => {
 
   } catch (error) {
     console.error("Error fetching API response:", error);
+    alert("The connection to the server was lost. Please refresh the page and try again.")
   }
 };
