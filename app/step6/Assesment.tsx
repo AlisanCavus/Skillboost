@@ -1,10 +1,16 @@
 'use client';
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import WizardHeader from "../components/WizardHeader";
 
 const Assesment = () => {
+  const router = useRouter();
   const score = localStorage.getItem("score");
   const scoreObj = JSON.parse(score as any);
+
+  const clear = () => {
+    localStorage.clear();
+    router.push("/step1");
+  }
 
 
   return (
@@ -45,6 +51,22 @@ const Assesment = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className="align-center flex h-full w-full justify-between gap-4">
+        <button
+          onClick={() => router.back()}
+          type="button"
+          className="btn text-white"
+        >
+          Previous Step
+        </button>
+        <button
+          type="button"
+          onClick={clear}
+          className="btn bg-brandPrimary text-white"
+        >
+          Start from beginning
+        </button>
       </div>
     </WizardHeader>
   );
