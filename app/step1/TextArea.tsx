@@ -54,6 +54,7 @@ const parseJobDesc = async () => {
     jobDescription,
   })
   localStorage.setItem("gptSkillsExp", skillsExp);
+  localStorage.setItem("jobDescription", jobDescription);
   setIsLoading(false);
   router.push("/step2");
 }
