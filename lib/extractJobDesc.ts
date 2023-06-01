@@ -1,8 +1,6 @@
 import { JobDescription } from "@/types/skilExpTypes";
 
 export const extractJobDesc = async (jobDescription: JobDescription) => {
-  jobDescription.setIsLoading(true);
-  jobDescription.setEverythingOK(false);
   const options = {
     method: "POST",
     headers: {
@@ -33,16 +31,10 @@ export const extractJobDesc = async (jobDescription: JobDescription) => {
     const data = json.choices[0].text.trim();
     if (data) {
       // save to local storage
-      localStorage.setItem("jobDescription", jobDescription.jobDescription);
-      localStorage.setItem("gptSkillsExp", data);
-      jobDescription.setGptSkillsExp(JSON.parse(data));
-      jobDescription.setEverythingOK(true);
-      jobDescription.router.push("/step2");
-      jobDescription.setIsLoading(false);
+      return data;
     }
     
   } catch (error) {
     console.error("Error fetching API response:", error);
   }
-  return null;
 };
