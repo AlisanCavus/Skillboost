@@ -10,7 +10,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 
 const FormRegister: React.FC<Token> = ({ token }) => {
   if (token) {
-    redirect("/welcome");
+    redirect("/step1");
   }
   const { isToast, change } = useToastStore();
   const [email, setEmail] = useState("");
