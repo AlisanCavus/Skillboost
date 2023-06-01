@@ -11,7 +11,7 @@ const SideBar = () => {
     "/step1": "Find a Job Description",
     "/step2": "See the Requirements",
     "/step3": "Upload Your CV",
-    "/step4": "Create Motivation Letter",
+    "/step4": "Your Motivation Letter",
     "/step5": "Assess your Application",
     "/step6": "Get your Score",
   };
