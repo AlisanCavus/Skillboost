@@ -13,9 +13,7 @@ const TextArea = () => {
   const router = useRouter();
   const ref = useRef<HTMLTextAreaElement>(null);
   const [jobDescription, setJobDescription] = useState("");
-  const [everythingOK, setEverythingOK] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [gptSkillsExp, setGptSkillsExp] = useState({}) as any;
   const { isToast, change } = useToastStore();
   const [error, setError] = useState("");
 
@@ -50,22 +48,23 @@ const TextArea = () => {
     }
   }, []);
 
+const parseJobDesc = async () => {
+  setIsLoading(true);
+  const skillsExp = await extractJobDesc({
+    jobDescription,
+  })
+  localStorage.setItem("gptSkillsExp", skillsExp);
+  setIsLoading(false);
+  router.push("/step2");
+}
+
+
   const submitText = () => {
     if (jobDescription === "") {
       setError("Please enter a job description!");
       change(isToast);
     } else {
-      extractJobDesc({
-        gptSkillsExp,
-        setGptSkillsExp,
-        jobDescription,
-        everythingOK,
-        setEverythingOK,
-        setIsLoading,
-        isLoading,
-        setJobDescription,
-        router,
-      });
+      parseJobDesc()
     }
   };
 

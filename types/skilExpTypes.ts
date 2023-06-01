@@ -28,14 +28,6 @@ export interface GptSkillsExp {
 }
 
 export interface JobDescription {
-  everythingOK: boolean;
-  setEverythingOK: (everthingOK: boolean) => void;
-  isLoading: boolean;
-  setIsLoading: (isLoading: boolean) => void;
   jobDescription: string;
-  gptSkillsExp: GptSkillsExp;
-  setJobDescription: (jobDescription: string) => void;
-  setGptSkillsExp: (gptSkillsExp: GptSkillsExp) => void;
-  router: any;
 }
 
