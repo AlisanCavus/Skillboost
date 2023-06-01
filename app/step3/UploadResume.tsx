@@ -73,11 +73,11 @@ const UploadResume = () => {
       }
       h2={"Upload your CV"}
     >
-      <div className="flex h-full flex-col justify-center gap-4">
+      
         <div className="form-control mx-auto p-2">
           <input
             type="file"
-            className="file-input-bordered file-input-secondary file-input-lg w-full max-w-xs"
+            className="file-input file-input-bordered file-input-secondary w-full max-w-xs"
             accept=".doc, .docx, .pdf"
             ref={fileInputRef}
             onChange={handleUpload}
@@ -94,7 +94,7 @@ const UploadResume = () => {
           </button>
           
         </div>
-      </div>
+      
     </WizardHeader>
     {error && isToast && (
       <div className="toast-center toast w-96">
