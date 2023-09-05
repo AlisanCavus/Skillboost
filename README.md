@@ -1,6 +1,6 @@
 # Skillboost
 
-
+[Go to app!](https://skillboost.vercel.app/)
 
 A job application tool for specific job description.
 
