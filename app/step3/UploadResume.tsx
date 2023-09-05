@@ -39,8 +39,8 @@ const UploadResume = () => {
       setIsLoading(true);
       const res = await affindaClient.createDocument({
         file,
-        workspace: "boZlKmiN",
-        collection: "iojESxXj",
+        workspace: process.env.NEXT_PUBLIC_AFFINDA_WORKSPACE,
+        collection: process.env.NEXT_PUBLIC_AFFINDA_COLLECTION,
       });
       if (res.error) {
         setError(res.error);
